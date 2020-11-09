@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="javascript/createtodo.js" ></script>
+        <script src="javascript/logout.js" ></script>
+        <title>ToDo App</title>
+    </head>
+    <body>
+        <a class="navbar-brand" href="#">ToDo App</a>
+        <ul class="nav navbar-nav">
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="dashboard.html">ToDo List</a></li>
+        </ul>
+        <ul style="float: right;" class="nav navbar-nav">
+            <li><a href="javascript:void(0);" id="logoutButton">LogOut</a></li>
+        </ul>
+
+        <h2>Create ToDo</h2>
+            <hr>
+            <form>
+                <label for="todoTitle">Title</label>
+                <input type="text" id="todoTitle" onfocus="this.value=''" value="title">
+                <span id="spn_title" class="text-danger" style="display: none;">Please enter todo title</span>
+
+                <label for="todoStartDate">Select Date</label>
+                <input type="date" id="todoStartDate" onfocus="this.value=''" placeholder="dd/mm/yyyy">
+                <span id="spn_starttdate" class="text-danger" style="display: none;">Please enter/select date</span>
+                      <span id="spn_startdateinvalid" class="text-danger" style="display: none;"> Date must be current or future date only</span>
+
+                    <fieldset>
+                      <label>Is Public</label>
+                      <input type="radio" id="ispublicYes" name="public" value="yes">
+                      <label for="ispublicYes">Yes</label>
+
+                      <input type="radio" id="ispublicNo" name="public" value="No">
+                      <label for="ispublicNo">No</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <label>Is Reminder</label>
+                        <input type="radio" id="reminderYes" name="reminder" value="yes" onclick="handleReminderClick(this);">
+                        <label for="reminderYes">Yes</label>
+
+                        <input type="radio" id="reminderNo" name="reminder" value="No" onclick="handleReminderClick(this);">
+                        <label for="reminderNo">No</label>
+                    </fieldset>
+
+                    <div id="div_reminder" style="display: none;">
+                    <label for="reminderdate">Reminder Date</label>
+                    <input type="date" id="reminderDate" name="reminder" placeholder="dd/MM/yyyy" onfocus="this.value=''">
+                      <span id="spn_reminderdate" class="text-danger" style="display: none;">Please enter/select date</span>
+                      <span id="spn_reminderdateinvalid" class="text-danger" style="display: none;">Reminder date must be current or future date only</span>
+                    </div>
+                      <label for="todoCategory">Select Category</label>
+                        <input type="checkbox"  id="chk_office" name="todoCategory" value="office">
+                        <label for="office">Office</label>
+
+                        <input type="checkbox" id="chk_home" name="todoCategory" value="home">
+                        <label for="home">Home</label>
+
+                        <input type="checkbox" id="chk_personal" name="todoCategory" value="personal">
+                        <label for="personal">Personal</label>
+
+                        <span id="spn_categories" class="text-danger" style="display: none;">Please select category</span>
+
+                        <button id="createTodoButton" type="submit"><b>Add Task +</b></button>
+                </form>
+
+
+
+    </body>
+
