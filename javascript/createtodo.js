@@ -114,7 +114,6 @@ function validatedate(targetdate){
     }
     return true;
 }
-
 function stringToDate(_date,_format,_delimiter)
 {
             var formatLowerCase=_format.toLowerCase();
