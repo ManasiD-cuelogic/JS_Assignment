@@ -1,3 +1,8 @@
+//function for prevent default browser back button
+function preventBack() { window.history.forward(); }
+setTimeout("preventBack()", 0);
+window.onunload = function () { null };  
+
 window.addEventListener("DOMContentLoaded",function(){
     if (sessionStorage.getItem("loggedinuser") === null) {
         window.location='login.html';
@@ -33,6 +38,7 @@ window.addEventListener("DOMContentLoaded",function(){
       document.getElementById("deleteTodo").addEventListener("click",deletetodos);
       document.getElementById("titleSearch").addEventListener("keyup",searchByTitle);
 
+      //sort by status
       document.getElementsByName('statusSearch').forEach(function(item) {
         item.addEventListener("click", function(e) {
             var selectedStatus=e.target.value;
@@ -81,7 +87,7 @@ window.addEventListener("DOMContentLoaded",function(){
     //search by category
     document.getElementsByName('searchByCat').forEach(function(item) {
       item.addEventListener("click", function(e) {
-          var selected_Categories=document.querySelectorAll('input[name="inputCategorySearch"]:checked');
+          var selected_Categories=document.querySelectorAll('input[name="searchByCat"]:checked');
           var catVals = [];
           for(var i = 0; i < selected_Categories.length; i++)
           {
@@ -117,7 +123,7 @@ window.addEventListener("DOMContentLoaded",function(){
 
         else{
           rowshtml=`<tr>
-          <td colspan="7" style="text-align:center"><b>No records to display</b></td>
+          <td colspan="8" style="text-align:center"><b>No records to display</b></td>
           </tr>`;
         }
         var tableRef = document.getElementById('todoTbl').getElementsByTagName('tbody')[0];
@@ -158,7 +164,7 @@ function searchByTitle(e){
       <td colspan="7" style="text-align:center"><b>No records to display</b></td>
       </tr>`;
     }
-    var tableRef = document.getElementById('tbl_todolist').getElementsByTagName('tbody')[0];
+    var tableRef = document.getElementById('todoTbl').getElementsByTagName('tbody')[0];
     tableRef.innerHTML=rowshtml;
 }
 
@@ -171,9 +177,9 @@ function deletetodos(e){
   var loggedinuser=JSON.parse(sessionStorage.getItem("loggedinuser"));
   var todolist=users.find( a => a.email == loggedinuser.email).todos;
   var newtodolist=todolist;
-  var r = confirm("Are you sure, you want to delete selected todos?");
+  var r = confirm("Are you sure, you want to delete selected task?");
   if (r == true) {
-      var table = document.getElementById("tbl_todolist");
+      var table = document.getElementById("todoTblS");
       var checkBoxes = table.getElementsByTagName("input");
       for (var i = 0; i < checkBoxes.length; i++) {
           if (checkBoxes[i].checked) {
