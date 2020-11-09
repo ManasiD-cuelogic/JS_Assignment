@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="javascript/createtodo.js" ></script>
         <script src="javascript/logout.js" ></script>
-        <title>ToDo App</title>
+        <title>ToDo App</title>`
     </head>
     <body>
         <a class="navbar-brand" href="#">ToDo App</a>
@@ -25,7 +25,7 @@
                 <span id="spn_title" class="text-danger" style="display: none;">Please enter todo title</span>
 
                 <label for="todoStartDate">Select Date</label>
-                <input type="date" id="todoStartDate" onfocus="this.value=''" placeholder="dd/mm/yyyy">
+                <input type="date" id="todoStartDate" onfocus="this.value=''">
                 <span id="spn_starttdate" class="text-danger" style="display: none;">Please enter/select date</span>
                       <span id="spn_startdateinvalid" class="text-danger" style="display: none;"> Date must be current or future date only</span>
 
@@ -34,7 +34,7 @@
                       <input type="radio" id="ispublicYes" name="public" value="yes">
                       <label for="ispublicYes">Yes</label>
 
-                      <input type="radio" id="ispublicNo" name="public" value="No">
+                      <input type="radio" id="ispublicNo" name="public" value="No" checked>
                       <label for="ispublicNo">No</label>
                     </fieldset>
 
@@ -43,13 +43,13 @@
                         <input type="radio" id="reminderYes" name="reminder" value="yes" onclick="handleReminderClick(this);">
                         <label for="reminderYes">Yes</label>
 
-                        <input type="radio" id="reminderNo" name="reminder" value="No" onclick="handleReminderClick(this);">
+                        <input type="radio" id="reminderNo" name="reminder" value="No" checked onclick="handleReminderClick(this);">
                         <label for="reminderNo">No</label>
                     </fieldset>
 
                     <div id="div_reminder" style="display: none;">
                     <label for="reminderdate">Reminder Date</label>
-                    <input type="date" id="reminderDate" name="reminder" placeholder="dd/MM/yyyy" onfocus="this.value=''">
+                    <input type="date" id="reminderDate" name="reminder" onfocus="this.value=''">
                       <span id="spn_reminderdate" class="text-danger" style="display: none;">Please enter/select date</span>
                       <span id="spn_reminderdateinvalid" class="text-danger" style="display: none;">Reminder date must be current or future date only</span>
                     </div>
