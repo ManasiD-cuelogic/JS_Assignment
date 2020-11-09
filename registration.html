@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="javascript/registration.js"></script>
+        <title>Registration form</title>
+
+    </head>
+    <body>
+        <div class=container>
+            <div class="registartion">
+                <h1>Create Your Account</h1>
+                </div>
+                <form>
+                    <lable for="fname">Enter FirstName:</lable>
+                    <input type="text" onfocus="this.value=''" value="Enter firstname" name="fname" id="fname">
+                    <span id="spn_fname" class="text_danger" style="display: none;">Please enter first name</span>
+
+                    <lable for="lname">Enter LastName:</lable>
+                    <input type="text" onfocus="this.value=''" value="Enter lastname" name="lname" id="lname">
+                    <span id="spn_lname" class="text_danger" style="display: none;">Please enter last name</span>
+
+                    <label for="mailid">Enter Email-ID:</label>
+                    <input type="email" onfocus="this.value=''" value="Enter email-id " name="mailid" id="mailid">
+                    <span id="spn_email" class="text_danger" style="display: none;">Please enter your email</span>
+                    <span id="spn_email_wrong" class="text_danger" style="display: none;">Please enter valid email</span>
+                    <span id="spn_email_exist" class="text_danger" style="display: none;">Email Id already registered in the system</span>
+
+                    <lable for="pwd">Enter Password:</lable>
+                    <input type="password" name = "pwd" id = "pwd">
+                    <span id="spn_pwd" class="text_danger" style="display: none;">Please enter password</span>
+
+                    <lable for="cpwd">Enter Confirm Password:</lable>
+                    <input type="password" name="cpwd" id="cpwd">
+                    <span id="spn_confirmpwd" class="text_danger" style="display: none;">Password & Confirm Password should match</span>
+
+                    <lable for="gender">Gender:</lable>
+
+                    <input type= "radio" value="male" name="gender" id="redio1">
+                    <lable for="male">male</lable>
+
+                    <input type="radio" value="female" name = "gender" id="redio2">
+                    <lable for="female">female</lable>
+
+
+                    <lable for="add">Enter Address:</lable>
+                    <input type="text" onfocus="this.value=''"value="Enter address here" name="add" id="add">
+
+                    <lable for="profile-img">Profile Picture:</lable>
+                    <input type="file" accept="image/*" name=profile-img id="profileimg" onchange="getImageData();" required>
+                    <img style="height: 5%;width: 10%;" id="output" />
+
+
+                    <button type="submit" class="registerButton" id="register">Register</button>
+                    <a href="login.html">Back to Login</a>
+                
+                </form>
+            </div>
+    </body>
+</html>
