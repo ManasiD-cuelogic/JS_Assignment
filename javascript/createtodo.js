@@ -15,6 +15,9 @@ window.addEventListener("DOMContentLoaded",function(){
     document.getElementById("todoStartDate").setAttribute('min', today);
     document.getElementById("reminderDate").setAttribute('min', today);
 })
+function preventBack() { window.history.forward(); }  
+    setTimeout("preventBack()", 0);  
+    window.onunload = function () { null };  
 
 function createToDo(e){
     e.preventDefault();
