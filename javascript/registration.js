@@ -1,9 +1,3 @@
-(function(){
-    if (sessionStorage.getItem("loggedinuser") != null) {
-        window.location="dashboard.html";
-      }
-})();
-
 window.addEventListener("DOMContentLoaded",function(){
     document.getElementById("register").addEventListener("click",RegisterUser);
 });
