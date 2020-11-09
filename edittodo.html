@@ -10,9 +10,9 @@
 
   <body>
       <div>
-        <ul class="nav navbar-nav">
+        <ul>
             <li><a href="profile.html">My Profile</a></li>
-            <li><a href="todos.html">ToDo List</a></li>
+            <li><a href="dashboard.html">ToDo List</a></li>
           </ul>
           <ul style="float: right;">
             <li><a href="javascript:void(0);" id="logoutButton">LogOut</a></li>
@@ -25,20 +25,20 @@
             <input id="inputId" type="hidden" name="todoid" value="" />
             <label for="todoTitle">Title</label>
                 <input type="text" id="todoTitle" onfocus="this.value=''" value="title">
-                <span id="spn_title" class="text-danger" style="display: none;">Please enter todo title</span>
+                <span id="spn_title" style="display: none;">Please enter todo title</span>
 
                 <label for="todoStartDate">Select Date</label>
-                <input type="date" id="todoStartDate" onfocus="this.value=''" placeholder="dd/mm/yyyy">
-                <span id="spn_starttdate" class="text-danger" style="display: none;">Please enter/select date</span>
-                      <span id="spn_startdateinvalid" class="text-danger" style="display: none;"> Date must be current or future date only</span>
+                <input type="date" id="todoStartDate">
+                <span id="spn_starttdate" style="display: none;">Please enter/select date</span>
+                      <span id="spn_startdateinvalid" style="display: none;"> Date must be current or future date only</span>
 
                     <fieldset>
                       <label>Is Public</label>
-                      <input type="radio" id="ispublic" name="public" value="yes">
-                      <label for="ispublic">Yes</label>
+                      <input type="radio" id="ispublic_Yes" name="public" value="yes">
+                      <label for="ispublic_Yes">Yes</label>
 
-                      <input type="radio" id="ispublic" name="public" value="No">
-                      <label for="ispublic">No</label>
+                      <input type="radio" id="ispublic_No" name="public" value="No" checked>
+                      <label for="ispublic_No">No</label>
                     </fieldset>
 
                     <fieldset id="fieldReminder">
@@ -52,9 +52,9 @@
 
                     <div id="div_reminder" style="display: none;">
                     <label for="reminderdate">Reminder Date</label>
-                    <input type="date" id="reminderDate" name="reminder" placeholder="dd/MM/yyyy" onfocus="this.value=''">
-                      <span id="spn_reminderdate" class="text-danger" style="display: none;">Please enter/select date</span>
-                      <span id="spn_reminderdateinvalid" class="text-danger" style="display: none;">Reminder date must be current or future date only</span>
+                    <input type="date" id="reminderDate" name="reminder">
+                      <span id="spn_reminderdate" style="display: none;">Please enter/select date</span>
+                      <span id="spn_reminderdateinvalid" style="display: none;">Reminder date must be current or future date only</span>
                     </div>
                       <label for="todoCategory">Select Category</label>
                         <input type="checkbox"  id="chk_office" name="todoCategory" value="office">
@@ -66,7 +66,7 @@
                         <input type="checkbox" id="chk_personal" name="todoCategory" value="personal">
                         <label for="personal">Personal</label>
 
-                        <span id="spn_categories" class="text-danger" style="display: none;">Please select category</span>
+                        <span id="spn_categories" style="display: none;">Please select category</span>
 
                         <button id="updateTodoButton" type="submit"><b>Update Task +</b></button>
                         <a href="dashboard.html">Back to Todo List</a>
