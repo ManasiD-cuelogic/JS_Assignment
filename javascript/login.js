@@ -10,12 +10,9 @@ window.addEventListener("DOMContentLoaded",function(){
 
 function LoginUser(e){
     e.preventDefault();
-    //$("#spn_loginerr").hide();
     document.getElementById("spn_loginerr").style.display="none";
     var logindetails={
-        //email:$("#mailid").val(),
         email:document.getElementById("mailid").value,
-        //password:$("#pwd").val()
         password:document.getElementById("pwd").value
     };
     if(ValidateUserLogin(logindetails)){
@@ -23,9 +20,7 @@ function LoginUser(e){
         RedirectToToDoListPage();
     }
     else{
-        //$("#spn_loginerr").show();
         document.getElementById("spn_loginerr").style.display="block";
-        
         return false;
     }
     
