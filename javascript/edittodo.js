@@ -3,25 +3,26 @@ window.addEventListener("DOMContentLoaded",function(){
         window.location='login.html';
       }
       const params = new URLSearchParams(window.location.search);
-        //var id=params.get("id");
-        var id=localStorage.get("id");
-    var users = JSON.parse(localStorage.getItem("userlist"));
-        var loggedinuser=JSON.parse(sessionStorage.getItem("loggedinuser"));
-        var todos=users.find( a => a.email == loggedinuser.email).todos;
-    var editedtodo;
-    for (var i=0;i<todos.length;i++){
-        if(todos[i].id==id){
-            editedtodo=todos[i];
-            break;
-        }
-    }
+      var id=params.get("id");
+      var users = JSON.parse(localStorage.getItem("userlist"));
+      var loggedinuser=JSON.parse(sessionStorage.getItem("loggedinuser"));
+      var todos=users.find( a => a.email == loggedinuser.email).todos;
+      var editedtodo;
+      for (var i=0;i<todos.length;i++)
+      {
+          if(todos[i].id==id)
+          {
+              editedtodo=todos[i];
+              break;
+          }
+      }
     document.getElementById("inputId").value=editedtodo.id;
     document.getElementById("todoTitle").value=editedtodo.title;
-    document.getElementById("todoStarttDate").value=editedtodo.targetDate;
-    document.getElementById("ispublic"+editedtodo.isPublic).checked =true;
+    document.getElementById("todoStartDate").value=editedtodo.targetDate;
+    document.getElementById("ispublic_"+editedtodo.isPublic).checked=true;
     if(editedtodo.reminderDate){
         document.getElementById("reminderYes").checked =true;
-        document.getElementById("fieldReminder").style.display="block";
+        document.getElementById("div_reminder").style.display="block";
         document.getElementById("reminderDate").value=editedtodo.reminderDate;
     }
     else{
@@ -94,8 +95,7 @@ function editTodo(e){
     }
 };
 function validatetodoform(new_todo){
-    //$("span.text-danger").hide();
-    document.getElementById("span_text-danger").hidden;
+    //document.getElementById("span_text-danger").hidden;
     var isFormValid = true;
     if(!new_todo.title){
         isFormValid=false;
