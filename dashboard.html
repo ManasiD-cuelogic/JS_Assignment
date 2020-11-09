@@ -8,8 +8,8 @@
     <title>ToDo App</title>
   </head>
   <body>
-    <a class="navbar-brand" href="#">ToDo App</a>
-    <ul class="nav navbar-nav">
+    <a href="#">ToDo App</a>
+    <ul>
         <li><a href="profile.html">My Profile</a></li>
       </ul>
       <a href="javascript:void(0);" id="logoutButton">LogOut</a>
@@ -23,7 +23,7 @@
       <input type="radio" name="statusSearch" value="completed"> Completed 
       <input type="radio" name="statusSearch" value="pending"> Pending
       </div>
-      <div class="col-sm-4"><b>Category: </b>
+      <div><b>Category: </b>
         <input type="checkbox" name="searchByCat" value="office"> Office 
         <input type="checkbox" name="searchByCat" value="home"> Home 
         <input type="checkbox" name="searchByCat" value="personal"> Personal
@@ -31,7 +31,7 @@
       
       <hr>
 
-      <table id="todoTbl" class="table">
+      <table id="todoTbl">
         <thead>
           <th style="text-align:center"><button id="deleteTodo">Delete</button></th>
             <th>Title</th>
