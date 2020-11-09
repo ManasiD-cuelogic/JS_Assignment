@@ -1,1 +1,0 @@
-var uname = document.getElementById
