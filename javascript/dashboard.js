@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded",function(){
       if(todoList && todoList.length>0 ){
         for (var i=0;i<todoList.length;i++){
             rowshtml+=`<tr>
-            <td style="text-align:center"><input type="checkbox" data-id="${todoList[i].id}" name="chkdeletetodo" /></td>
+            <td colspan=3 style="text-align:center"><input type="checkbox" data-id="${todoList[i].id}" name="chkdeletetodo" /></td>
             <td>${(todoList[i].isDone)?"<del>"+todoList[i].title+"</del>":todoList[i].title}</td>
             <td>${todoList[i].targetDate}</td>
             <td>${(todoList[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
@@ -123,7 +123,7 @@ window.addEventListener("DOMContentLoaded",function(){
 
         else{
           rowshtml=`<tr>
-          <td colspan="8" style="text-align:center"><b>No records to display</b></td>
+          <td colspan="7" style="text-align:center"><b>No records to display</b></td>
           </tr>`;
         }
         var tableRef = document.getElementById('todoTbl').getElementsByTagName('tbody')[0];
@@ -179,8 +179,8 @@ function deletetodos(e){
   var newtodolist=todolist;
   var r = confirm("Are you sure, you want to delete selected task?");
   if (r == true) {
-      var table = document.getElementById("todoTblS");
-      var checkBoxes = table.getElementsByTagName("input");
+      var table = document.getElementById("todoTbl");
+      var checkBoxes = table.getElementsByTagName("INPUT");
       for (var i = 0; i < checkBoxes.length; i++) {
           if (checkBoxes[i].checked) {
               var id = checkBoxes[i].getAttribute("data-id");
