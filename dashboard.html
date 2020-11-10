@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="javascript/dashboard.js" ></script>
     <script src="javascript/logout.js" ></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>ToDo App</title>
   </head>
   <body>
@@ -31,9 +33,9 @@
       
       <hr>
 
-      <table id="todoTbl">
+      <table id="todoTbl" class="tasktable">
         <thead>
-          <th style="text-align:center"><button id="deleteTodo">Delete</button></th>
+          <th style="text-align:center"><button id="deleteTodo" style="background-color: red;">Delete</button></th>
             <th>Title</th>
             <th>Target Date</th>
             <th>Status</th>
