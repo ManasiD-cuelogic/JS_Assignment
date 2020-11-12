@@ -11,11 +11,10 @@ window.addEventListener("DOMContentLoaded",function(){
       var loggedinuser=JSON.parse(sessionStorage.getItem("loggedinuser"));
       var todoList=users.find( a => a.email == loggedinuser.email).todos;
       var rowshtml='';
-      
       if(todoList && todoList.length>0 ){
         for (var i=0;i<todoList.length;i++){
             rowshtml+=`<tr>
-            <td colspan=3 style="text-align:center"><input type="checkbox" data-id="${todoList[i].id}" name="chkdeletetodo" /></td>
+            <td style="text-align:center"><input type="checkbox" data-id="${todoList[i].id}" name="chkdeletetodo" /></td>
             <td>${(todoList[i].isDone)?"<del>"+todoList[i].title+"</del>":todoList[i].title}</td>
             <td>${todoList[i].targetDate}</td>
             <td>${(todoList[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
@@ -32,7 +31,6 @@ window.addEventListener("DOMContentLoaded",function(){
         <td colspan="7" style="text-align:center"><b>No records to display</b></td>
         </tr>`;
       }
-
       var tableRef = document.getElementById('todoTbl').getElementsByTagName('tbody')[0];
       tableRef.innerHTML=rowshtml;
       document.getElementById("deleteTodo").addEventListener("click",deletetodos);

@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded",function(){
     document.getElementById("inputId").value=editedtodo.id;
     document.getElementById("todoTitle").value=editedtodo.title;
     document.getElementById("todoStartDate").value=editedtodo.targetDate;
-    document.getElementById("ispublic_"+editedtodo.isPublic).checked=true;
+    document.getElementById("isPublic_"+editedtodo.isPublic).checked=true;
     if(editedtodo.reminderDate){
         document.getElementById("reminderYes").checked =true;
         document.getElementById("div_reminder").style.display="block";
@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded",function(){
     }
     else{
         document.getElementById("reminderNo").checked =true;
-        document.getElementById("reminderDate").style.display="none";
+        document.getElementById("div_reminder").style.display="none";
     }
      for(var i = 0; i < editedtodo.categories.length; i++)
      {

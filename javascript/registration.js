@@ -40,7 +40,7 @@ function ValidateRegisterForm(){
         confirmPassword:document.getElementById("cpwd").value,
     };
     var isFormValid = true;
-    if(!user.firstName || user.firstName== ''){
+    if(user.firstName==null || user.firstName==''){
         isFormValid=false;
         document.getElementById("spn_fname").style.display = "block";
     }
