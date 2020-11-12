@@ -10,15 +10,16 @@
     <title>ToDo App</title>
   </head>
   <body>
-    <a href="#">ToDo App</a>
-    <ul>
-        <li><a href="profile.html">My Profile</a></li>
-      </ul>
-      <a href="javascript:void(0);" id="logoutButton">LogOut</a>
+    <header>
+    <h3><a href="#" class="h3">ToDo App</a></h3>
+    
+      <a href="profile.html">My Profile</a>
+      <a href="javascript:void(0);" id="logoutButton" style="float: right;">LogOut</a>
+      </header>
+      <div class="container">
       <h2>Todo List</h2>
-      <a href="createtodo.html" class="btn btn-primary">Create Todo</a>
-      <input class="form-control" type="text" placeholder="Search by title" id="titleSearch"/>
-
+      <a href="createtodo.html" class="btn">Create Todo</a>
+      <input type="text" placeholder="Search by title" id="titleSearch"/>
       <div>
       <b>Status : </b>
       <input type="radio" name="statusSearch" value="all" checked> All
@@ -32,7 +33,7 @@
       </div>
       
       <hr>
-
+      <div class="todotable">
       <table id="todoTbl" class="tasktable">
         <thead>
           <th style="text-align:center"><button id="deleteTodo" style="background-color: red;">Delete</button></th>
@@ -46,5 +47,6 @@
         </thead>
         <tbody id="tbl_todolist_tbody"></tbody>
     </table>
-
+    </div>
+</div>
   </body>

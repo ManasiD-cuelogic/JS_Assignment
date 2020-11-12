@@ -3,27 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="javascript/login.js" ></script>
         <title>TO-DO App</title>
 
     </head>
     <body>
-        <div class="login">
-            <h2>Login</h2>
-            <hr>
+        
+        <div class="container">
+            <div class="login_form">
+                <h2>Login</h2>
+                <hr>
                 <form>
                     <lable for = "mailid">Enter register mail-id</lable>
-                    <br>
+                    <br><br>
                     <input id="mailid" type="email" class="email" value="email" onfocus="this.value=''">
-                    <br>
+                    <br><br>
                     <lable for = "pwd">Enter password</lable>
-                    <br>
+                    <br><br>
                     <input type="password" class = "password" id="pwd" value="password" onfocus="this.value=''">
                     <br>
                     <span id="spn_loginerr" class="text_danger" style="display: none;">Invalid Email/Password</span><br/>
                     <button type="submit" id="loginbutton"><b>Login</b></button>
                 </form>
+                <br>
                 <span>Not an user?</span><a href="registration.html">Register Here!</a>
+            </div>
         </div>
     </body>
 </html>
