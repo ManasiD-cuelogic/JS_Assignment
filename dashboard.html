@@ -5,40 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="javascript/dashboard.js" ></script>
     <script src="javascript/logout.js" ></script>
-    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     <title>ToDo App</title>
   </head>
   <body>
     <header>
-    <h3><a href="#" class="h3">ToDo App</a></h3>
+      <h3><a href="#" class="h3">ToDo App</a></h3>
+      <a href="javascript:void(0);" id="logoutButton" class="logoutbtn" style="float:right;">LogOut</a>
+      <a href="profile.html" class="profilebtn" style="float: right;">My Profile</a>
+    </header>
     
-      <a href="profile.html">My Profile</a>
-      <a href="javascript:void(0);" id="logoutButton" style="float: right;">LogOut</a>
-      </header>
-      <div class="container">
+    <section>
       <h2>Todo List</h2>
-      <a href="createtodo.html" class="btn">Create Todo</a>
-      <input type="text" placeholder="Search by title" id="titleSearch"/>
       <div>
-      <b>Status : </b>
-      <input type="radio" name="statusSearch" value="all" checked> All
-      <input type="radio" name="statusSearch" value="completed"> Completed 
-      <input type="radio" name="statusSearch" value="pending"> Pending
+        <input type="text" placeholder="Search by title" id="titleSearch"/>
+        <a href="createtodo.html" class="btn" style="float: right;">Create Todo</a>
       </div>
-      <div><b>Category: </b>
+      
+      <div class="status">
+        <b>Status : </b>
+        <input type="radio" name="statusSearch" value="all" checked> All
+        <input type="radio" name="statusSearch" value="completed"> Completed 
+        <input type="radio" name="statusSearch" value="pending"> Pending
+      </div>
+      
+      <div class="category">
+        <b>Category: </b>
         <input type="checkbox" name="searchByCat" value="office"> Office 
         <input type="checkbox" name="searchByCat" value="home"> Home 
         <input type="checkbox" name="searchByCat" value="personal"> Personal
       </div>
-      
-      <hr>
+    
       <div class="todotable">
-      <table id="todoTbl" class="tasktable">
+        <table id="todoTbl" class="tasktable">
         <thead>
-          <th style="text-align:center"><button id="deleteTodo" style="background-color: red;">Delete</button></th>
+          <th><button id="deleteTodo" class="deletbtn">Delete</button></th>
             <th>Title</th>
-            <th>Target Date</th>
+            <th>Start Date</th>
             <th>Status</th>
             <th>Is Overdue</th>
             <th>Category</th>
@@ -46,7 +50,8 @@
             <th>Edit</th>
         </thead>
         <tbody id="tbl_todolist_tbody"></tbody>
-    </table>
+      </table>
     </div>
-</div>
-  </body>
+  </section>
+</body>
+</html>

@@ -5,46 +5,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="javascript/profile.js" ></script>
         <script src="javascript/logout.js" ></script>
+        <link rel="stylesheet" href="css/profile.css">
         <title>User Profile Update</title>
     </head>
     <body>
-        <a class="navbar-brand" href="#">ToDo App</a>
-        <ul class="nav navbar-nav">
-            <li><a href="dashboard.html">My ToDos</a></li>
-        </ul>
-        <a href="javascript:void(0);" id="btn_logout">LogOut</a>
-        <h2>User Profile</h2>
-        <hr>
-        <form>
-            <lable for="fname">First Name</lable>
-            <input type="text" id="fname" onfocus="this.value=''" value="first name">
-            <span id="spn_fname" class="text-danger" style="display: none;">Please enter your first name</span>
+        <header>
+            <h3><a class="navbar-brand" href="#">ToDo App</a></h3>
+            <a href="javascript:void(0);" id="btn_logout" class="logoutbtn">LogOut</a>
+            <a href="dashboard.html" class="list">My ToDos</a>
+        </header>
 
-            <label for="lname"> Last Name</label>
-            <input type="text" id="lname" onfocus="this.value=''" value="last name">
-            <span id="spn_lname" class="text-danger" style="display: none;">Please enter your last name</span>
+        <section>
+            <h2>User Profile</h2>
+            <form>
+                <div>
+                    <lable for="fname" class="lable">First Name</lable>
+                    <input type="text" id="fname" onfocus="this.value=''" value="first name">
+                    <span id="spn_fname" class="text-danger" style="display: none;">Please enter your first name</span>
+                </div>
 
-            <label for="mailid">Email</label>
-            <input type="email" id="mailid" readonly>
+                <div>
+                    <label for="lname" class="lable"> Last Name</label>
+                    <input type="text" id="lname" onfocus="this.value=''" value="last name">
+                    <span id="spn_lname" class="text-danger" style="display: none;">Please enter your last name</span>
+                </div>
+
+                <div>
+                    <label for="mailid" class="lable">Email</label>
+                    <input type="email" id="mailid" readonly>
+                </div>
             
-            <lable for="gender">Gender:</lable>
+                <div>
+                    <lable for="gender" class="lable">Gender:</lable>
+                    <input type= "radio" value="male" name="gender" id="radio_male">
+                    <lable for="male">male</lable>
+                    <input type="radio" value="female" name="gender" id="radio_female">
+                    <lable for="female">female</lable>
+                </div>
 
-            <input type= "radio" value="male" name="gender" id="radio_male">
-            <lable for="male">male</lable>
+                <div>
+                    <label for="add" class="lable">Address</label>
+                    <input type="text" id="add" value="Address" onfocus="this.value=''">
+                </div>
 
-            <input type="radio" value="female" name="gender" id="radio_female">
-            <lable for="female">female</lable>
-
-            <label for="add">Address</label>
-            <input type="text" id="add" value="Address" onfocus="this.value=''">
-
-            <label for="profileimg">Profile Image</label>
-            <img style="height: 40%;width: 40%;" id="imgProfile" />
-            <input type="file" id="profileimg" accept="image/*" onchange="OnProfilePicChange()"/>
-            
-            <button id="updateProfile" type="submit">Update</button>
-
-        </form>
-
+                <div>
+                    <label for="profileimg" class="lable">Profile Image</label>
+                    <img style="height: 30%;width: 30%;" id="imgProfile" />
+                    <input type="file" id="profileimg" accept="image/*" onchange="OnProfilePicChange()"/>
+                </div>
+                <div>
+                    <br>
+                    <input id="updateProfile" type="submit" value="Update" class="updatebtn">
+                </div>
+            </form>
+        </section>
     </body>
 </html>
