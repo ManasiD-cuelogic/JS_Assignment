@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display&family=Roboto:wght@300&display=swap');
+a{
+    text-decoration: none;
+}
+.header{
+    background-color: #34495E;
+}
+section{
+    background-color: #AEB6BF ;
+}
+h3{
+    display: inline-block;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+.logoutbtn{
+    color: #ffffff;
+    padding: 10px 10px 10px 10px;
+    background-color: #d9534f;
+    height: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+.profilebtn{
+    color: #ffffff;
+    padding: 10px 10px 10px 10px;
+    background-color:  #0FBF61;
+    height: 40px;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+input[type=text]{
+    width: 350px;
+    height: 30px;
+    border: 1px solid #151D41;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: #151D41;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-bottom: 15px;
+    margin-left: 120px;
+}
+h2{
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 120px;
+}
+.btn{
+    color: #ffffff;
+    padding: 10px 10px 10px 10px;
+    background-color:  #0FBF61;
+    height: 40px;
+    margin-right: 90px;
+}
+.status{
+    display: inline-block;
+    padding-left: 120px;
+}
+.category{
+    display: inline-block;
+    padding-left: 100px;
+}
+table{
+    margin: 0 auto;
+}
+.deletbtn{
+    color: #ffffff;
+    padding: 6px 6px 6px 6px;
+    background-color: #d9534f;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #d9534f;
+}
+.text-success{
+    color: #0FBF61 ;
+    background-color:#D6DBDF ;
+    padding: 5px 5px 5px 5px;
+}

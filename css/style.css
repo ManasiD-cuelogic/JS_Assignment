@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display&family=Roboto:wght@300&display=swap');
 * {
 	box-sizing: border-box;
 	border: 0px;
@@ -12,8 +11,11 @@
     margin: 0 auto;
     padding: 0;
 }
+section{
+    background-color: #AEB6BF ;
+}
 header{
-    background-color: #a9a9a9;
+    background-color: #34495E ;
     height: 100px;
     padding-top: 20px;
 }
@@ -39,15 +41,7 @@ li a {
 span{
     color:#ff0000;
 }
-.login_form{
-    width: 300px;
-    margin: auto auto;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    padding: 20px;
-    
 
-}
 
 .registration_form{
     margin: 0 auto;
@@ -56,18 +50,90 @@ span{
     margin: 0 auto;
 }
 td{
-    padding: 0px 25px 20px 25px;
+    padding: 0px 30px 30px 25px;
 }
 th{
-    padding:20px 25px 20px 25px;
+    padding:30px 25px 20px 25px;
     padding-bottom: 20px;
+    text-align: center;
 }
 .h3{
     color: #FFFFFF;
     text-decoration: none;
     text-shadow: 4px 4px 4px #000000;
-    margin-bottom: 20px;
 }
 thead{
     padding: 0px 25px 20px 25px;
+}
+h1{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.right{
+    width: 50%;
+    float: right;
+}
+.left{
+    width: 50%;
+    float: left;
+}
+input[type=text], input[type=email],
+input[type=mail] ,input[type=password],
+input[type=file]{
+    width: 535px;
+    height: 50px;
+    border: 1px solid #151D41;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: #151D41;
+    line-height: 21px;
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-bottom: 15px;
+} 
+
+input[type=radio]{
+    font-size: 18px;
+
+}
+.gender{
+    padding-top: 40px;
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: #151D41;
+}
+.submit-button{
+    margin-top: 80px;
+    text-align: center;
+    clear: both;
+}
+input[type=submit]{
+    font-size: 25px;
+    font-family: 'Montserrat';
+    color: #FFFFFF;
+    background-color: #0FBF61;
+    border-radius: 5px;
+    padding: 15px 15px 15px 15px;
+    width: 170px;
+    height: 70px;
+
+}
+.email input[type=email]{
+    width: 535px;
+    height: 60px;
+    border: 1px solid #151D41;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: #151D41;
+    line-height: 21px;
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-bottom: 15px;
 }

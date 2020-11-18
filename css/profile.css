@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display&family=Roboto:wght@300&display=swap');
+* {
+	box-sizing: border-box;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+}
+header{
+    background-color: #34495E ;
+    height: 100px;
+   
+}
+section{
+    background-color: #AEB6BF ;
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-family: Montserrat;
+	font-size: 18px;
+	
+}
+h3{
+    display: inline-block;
+    padding-top: 30px;
+    padding-left: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-shadow: 4px 4px 4px #000000;
+}
+.list{
+    float: right;
+    color: #ffffff;
+    padding: 10px 10px 10px 10px;
+    background-color:  #0FBF61;
+    height: 40px;
+    margin-top: 25px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.logoutbtn{
+    float: right;
+    color: #ffffff;
+    padding: 10px 10px 10px 10px;
+    background-color: #d9534f;
+    height: 40px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+h2{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+input[type=text],input[type=email]{
+    height: 40px;
+    border: 1px solid #151D41;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: #151D41;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-bottom: 15px;
+}
+.lable{
+    padding-left: 20px;
+}
+.update{
+    margin: 0 auto;
+}
+
+input[type=submit]{
+    display: block;
+    font-size: 20px;
+    font-family: 'Montserrat';
+    color: #FFFFFF;
+    background-color: #0FBF61;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+    width: 126px;
+    height: 50px;
+    margin:0 auto
+   
+}

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display&family=Roboto:wght@300&display=swap');
+* {
+	box-sizing: border-box;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+}
+section{
+    background-color: #AEB6BF ;
+}
+span{
+    color:#ff0000;
+}
+.login_form{
+    width: 300px;
+    margin: auto auto;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 20px;
+    
+
+}
+input[type=email], input[type=password]{
+    width: 260px;
+    height: 50px;
+    border: 1px solid #151D41;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: #151D41;
+    line-height: 21px;
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-bottom: 15px;
+}
+input[type=submit]{
+    font-size: 20px;
+    font-family: 'Montserrat';
+    color: #FFFFFF;
+    background-color: #0FBF61;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+    width: 110px;
+    height: 50px;
+    margin-bottom: 10px;
+
+}
