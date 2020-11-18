@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded",function(){
             <td>${(todoList[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
             <td>${(todoList[i].targetDate>Date())?"Yes":"No"}</td>
             <td>${todoList[i].categories.join(',')}</td>
-            <td><button type="button" class="text-success" onclick="markasdone(${todoList[i].id})"><i class="fa fa-check-square-o"></i>Mark as done</button></td>
+            <td><button type="button" class="text-success" onclick="markasdone(${todoList[i].id})">Mark as done</button></td>
             <td><a href="edittodo.html?id=${todoList[i].id}"><i class="fa fa-edit"></i>Edit</a></td>
               </tr>`;
           }
@@ -64,7 +64,7 @@ window.addEventListener("DOMContentLoaded",function(){
                   <td>${(filteredtodolist[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
                   <td>${(filteredtodolist[i].targetDate>Date())?"Yes":"No"}</td>
                   <td>${filteredtodolist[i].categories.join(',')}</td>
-                  <td><button type="button" class="text-success" onclick="markasdone(${filteredtodolist[i].id})"><i class="fa fa-check-square-o"></i>Mark as done</button></td>
+                  <td><button type="button" class="text-success" onclick="markasdone(${filteredtodolist[i].id})">Mark as done</button></td>
                   <td><a href="edittodo.html?id=${filteredtodolist[i].id}"><i class="fa fa-edit"></i>Edit</a></td>
                   </tr>`;
 
@@ -112,7 +112,7 @@ window.addEventListener("DOMContentLoaded",function(){
                 <td>${(filteredtodolist[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
                 <td>${(filteredtodolist[i].targetDate>Date())?"Yes":"No"}</td>
                 <td>${filteredtodolist[i].categories.join(',')}</td>
-                <td><button type="button" class="text-success" onclick="markasdone(${filteredtodolist[i].id})"><i class="fa fa-check-square-o"></i>Mark as done</button></td>
+                <td><button type="button" class="text-success" onclick="markasdone(${filteredtodolist[i].id})">Mark as done</button></td>
                 <td><a href="edittodo.html?id=${filteredtodolist[i].id}"><i class="fa fa-edit"></i>Edit</a></td>
                 </tr>`;
             }
@@ -151,7 +151,7 @@ function searchByTitle(e){
             <td>${(filteredtodolist[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
             <td>${(filteredtodolist[i].targetDate>Date())?"Yes":"No"}</td>
             <td>${filteredtodolist[i].categories.join(',')}</td>
-            <td><button type="button" class="text-success" onclick="markasdone(${filteredtodolist[i].id})"><i class="fa fa-check-square-o"></i>Mark as done</button></td>
+            <td><button type="button" class="text-success" onclick="markasdone(${filteredtodolist[i].id})">Mark as done</button></td>
             <td><a href="edittodo.html?id=${filteredtodolist[i].id}"><i class="fa fa-edit"></i>Edit</a></td>
             </tr>`;
         }

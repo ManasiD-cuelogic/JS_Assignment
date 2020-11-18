@@ -95,19 +95,18 @@ function editTodo(e){
     }
 };
 function validatetodoform(new_todo){
-    //document.getElementById("span_text-danger").hidden;
     var isFormValid = true;
     if(!new_todo.title){
         isFormValid=false;
-        document.getElementById("spn_title").style.display="block";
+        document.getElementById("spn_title").innerHTML="Please Enter Tiltle";
     }
     if(!new_todo.targetDate){
         isFormValid=false;
-        document.getElementById("spn_startdate").style.display="block";
+        document.getElementById("spn_startdate").innerHTML="please enter/select date";
     }
-    else if(!validatedate(new_todo.targetDate)){
+    if(!validatedate(new_todo.targetDate)){
         isFormValid=false;
-        document.getElementById("spn_startdateinvalid").style.display="block";
+        document.getElementById("spn_startdateinvalid").innerHTML="invalid date";
     }
     if(!new_todo.categories || new_todo.categories.length==0){
         isFormValid=false;

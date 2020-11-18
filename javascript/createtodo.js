@@ -70,12 +70,8 @@ function createToDo(e){
 };
 
 function validatetodoform(new_todo){
-    var spansToHide = document.getElementsByClassName("text-danger");
-    for(var i = 0; i < spansToHide.length; i++){
-        spansToHide[i].style.display = "none";
-    }
     var isFormValid = true;
-    if(!new_todo.title){
+    if(new_todo.title==""){
         isFormValid=false;
         document.getElementById("spn_title").style.display="block";
     }
@@ -87,6 +83,7 @@ function validatetodoform(new_todo){
         isFormValid=false;
         document.getElementById("spn_startdateinvalid").style.display="block";
     }
+    else{}
     var isReminder=document.querySelector('input[name="reminder"]:checked').value
     if(isReminder=='yes'){
         if(!new_todo.reminderDate){
