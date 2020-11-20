@@ -14,7 +14,7 @@
 section{
     background-color: #AEB6BF ;
 }
-span{
+.text_danger{
     color:#ff0000;
 }
 .login_form{

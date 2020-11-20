@@ -38,10 +38,12 @@ li a {
 	font-size: 22px;
 	
 }
-span{
+.error{
     color:#ff0000;
 }
-
+.span{
+    color:#ff0000;
+}
 
 .registration_form{
     margin: 0 auto;
@@ -136,4 +138,7 @@ input[type=submit]{
     padding-top: 20px;
     padding-left: 25px;
     padding-bottom: 15px;
+}
+.error{
+    color: ff0000;
 }
