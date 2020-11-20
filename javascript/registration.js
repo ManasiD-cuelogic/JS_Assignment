@@ -13,7 +13,7 @@ function RegisterUser(e){
         var user={
             firstName:document.getElementById("fname").value,
             lastName:document.getElementById("lname").value,
-            email:document.getElementById("mailid").value.toLowerCase(),
+            email:document.getElementById("mailid").value,
             password:document.getElementById("pwd").value,
             gender:document.querySelector('input[name="gender"]:checked').value,
             address:document.getElementById("add").value,
@@ -38,41 +38,50 @@ function ValidateRegisterForm(){
         email:document.getElementById("mailid").value,
         password:document.getElementById("pwd").value,
         confirmPassword:document.getElementById("cpwd").value,
+        profilePic:document.getElementById("profileimg").src,
     };
     var isFormValid = true;
     if(user.firstName==null || user.firstName==''){
         isFormValid=false;
-        document.getElementById("spn_fname").style.display = "block";
+        document.getElementById("fnameerr").innerHTML = "Please enter first name";
     }
     if(!user.lastName){
         isFormValid=false;
-        document.getElementById("spn_lname").style.display = "block";
+        document.getElementById("lnameerr").innerHTML = "Please enter last name";
     }
     if(!user.email){
         isFormValid=false;
-        document.getElementById("spn_email").style.display = "block";
+        document.getElementById("emailerr").innerHTML = "Please enter your email";
     }
     else if(!isEmailValid(user.email)){
         isFormValid=false;
-        document.getElementById("spn_email_wrong").style.display = "block";
+        document.getElementById("email_wrong").innerHTML = "Please enter valid email";
     }
     else if(isEmailExist(user.email)){
         isFormValid=false;
-        document.getElementById("spn_email_exist").style.display = "block";
+        document.getElementById("email_exist").innerHTML = "Email Id already registered in the system";
     }
     if(!user.password){
         isFormValid=false;
-        document.getElementById("spn_pwd").style.display = "block";
+        document.getElementById("pwderr").innerHTML = "Please enter password";
     }
-    if(!user.confirmPassword || user.password != user.confirmPassword){
+    if(!user.confirmPassword){
         isFormValid=false;
-        document.getElementById("spn_confirmpwd").style.display = "block";
+        document.getElementById("spn_confirmpwd").innerHTML = "Please enter confirm password";
+    }
+    if(user.password != user.confirmPassword){
+        isFormValid=false;
+        document.getElementById("confirmpwderr").innerHTML = "Password & Confirm Password should match";
+    }
+    if(!isImageValid(user.profilePic)){
+        isFormValid=false;
+        document.getElementById("imgerr").innerHTML = "Only Images Can Accepted";
     }
     return isFormValid;
 };
 
 function isEmailValid(email){
-    var filter = /^([a-z0-9_\.\-])+\@(([a-z0-9\-])+\.)+([a-z0-9]{2,4})+$/;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return filter.test(email);
 }
 
@@ -90,7 +99,10 @@ function isEmailExist(email){
     
     return isEmailExist;
 }
-
+function isImageValid(profilePic){
+    var imgFilter= /.(gif|jpe?g|png|webp|bmp)$/i;
+    return imgFilter.test(profilePic);
+}
 function getImageData() {
     var input = document.getElementById("profileimg");
     var imagereader = new FileReader();
@@ -100,5 +112,15 @@ function getImageData() {
         profileImage.src = event.target.result;
        
     }
-    
+}
+function removeError()
+{
+  document.getElementById("fnameerr").innerText ="";
+  document.getElementById("lnameerr").innerText ="";
+  document.getElementById("emailerr").innerText ="";
+  document.getElementById("email_wrong").innerText ="";
+  document.getElementById("email_exist").innerText ="";
+  document.getElementById("pwderr").innerText ="";
+  document.getElementById("confirmpwderr").innerText ="";
+
 }
