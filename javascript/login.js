@@ -27,15 +27,15 @@ function ValidateUserLogin(logindetails){
     console.log(logindetails.password);
     var isUserExist=false;
     if(logindetails.email=="" && logindetails.password==""){
-        document.getElementById("spn_passmail").style.display="block";
+        document.getElementById("passmail").innerHTML="Enter Email & Password";
         isUserExist=false;
     }
     else if(logindetails.email==""){
-        document.getElementById("spn_mailerr").style.display="block";
+        document.getElementById("mailerr").innerHTML="Please Enter Email";
         isUserExist=false;
     }
     else if(logindetails.password==""){
-        document.getElementById("spn_passerr").style.display="block";
+        document.getElementById("passerr").innerHTML="Please Enter Password";
         isUserExist=false;
     }
     else{
@@ -45,8 +45,13 @@ function ValidateUserLogin(logindetails){
             isUserExist=true;
             break;
         }
-        else /*if(userList[i].email!==logindetails.email && userList[i].password!==logindetails.password)*/{
-            document.getElementById("spn_loginerr").style.display="block";
+        else if(userList[i].email!==logindetails.email){
+            document.getElementById("loginerr").innerHTML="Invalid Email";
+            isUserExist=false;
+            break;
+        }
+        else if(userList[i].password!==logindetails.password){
+            document.getElementById("loginerr").innerHTML="Password Invalid";
             isUserExist=false;
             break;
         }
@@ -67,7 +72,13 @@ function GetLoggedInUser(logindetails){
     }
     return user;
 }
-
+function removeError()
+{
+  document.getElementById("mailerr").innerText ="";
+  document.getElementById("passerr").innerText ="";
+  document.getElementById("passmail").innerText ="";
+  document.getElementById("loginerr").innerText ="";
+}
 function RedirectToToDoListPage(){
     window.location="dashboard.html";
 }
