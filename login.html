@@ -16,16 +16,16 @@
                 <br>
                 <form>
                     <lable for = "mailid">Enter register mail-id</lable>
-                    <input id="mailid" type="email" class="email" placeholder="email">
-                    <span id="spn_mailerr" class="text_danger" style="display: none;">Please Enter Email</span>
+                    <input id="mailid" type="email" class="email" placeholder="email" onclick="removeError()">
+                    <p id="mailerr" class="text_danger"></p>
                     <lable for = "pwd">Enter password</lable>
-                    <span id="spn_passerr" class="text_danger" style="display: none;">Please Enter Password</span>
-                    <input type="password" class = "password" id="pwd" placeholder="password">
-                    <span id="spn_passmail" class="text_danger" style="display: none;">Enter Email & Password</span>
-                    <span id="spn_loginerr" class="text_danger" style="display: none;">Invalid Email/Password</span>
+                    <p id="passerr" class="text_danger"></p>
+                    <input type="password" class = "password" id="pwd" placeholder="password" onclick="removeError()">
+                    <p id="passmail" class="text_danger"></p>
+                    <p id="loginerr" class="text_danger"></p>
                     <input type="submit" id="loginbutton" value="login">
                 </form>
-                <span>Not an user?</span><a href="registration.html">Register Here!</a>
+                <span>Not an user?</span><a href="registration.html"> Register Here!</a>
             </div>
             </section>
     
