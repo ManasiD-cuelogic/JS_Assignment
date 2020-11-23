@@ -27,6 +27,13 @@ a {
 	font-size: 18px;
 	
 }
+.createtodo{
+    width: 500px;
+    margin: auto auto;
+}
+.craete_form{
+    margin: auto;
+}
 h3{
     display: inline-block;
     padding-top: 30px;
@@ -103,11 +110,8 @@ input[type=submit]{
     left:800px;
     font-size: 20px;
 }
-span{
-    color: #d9534f;
-    padding-left: 20px ;
-}
 .error{
     color: #d9534f;
     padding-left: 20px ;
+    font-weight: bold;
 }
