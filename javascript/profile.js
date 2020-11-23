@@ -60,17 +60,28 @@ function UpdateUserProfile(e){
     var isFormValid = true;
     if(!user.firstName){
         isFormValid=false;
-        document.getElementById("spn_fname").show();
+        document.getElementById("fname_err").innerHTML="Please enter your first name";
     }
     if(!user.lastName){
         isFormValid=false;
-        document.getElementById("spn_lname").show();
+        document.getElementById("lname_err").innerHTML="Please enter your last name";
+    }
+    var imgFilter= /.(gif|jpe|jpeg|JPG|JPEG|PNG|png|webp|bmp)$/i;
+    if(!imgFilter.test(document.getElementById("profileimg").value)){
+        isFormValid=false;
+        document.getElementById("img_err").innerHTML="only images can accepted";
     }
     return isFormValid;
 };
 
 function OnProfilePicChange() {
     var input = document.getElementById("profileimg");
+    console.log(input.value);
+    var imgFilter= /.(gif|jpe|jpeg|JPG|JPEG|PNG|png|webp|bmp)$/i;
+    if(!imgFilter.test(input.value)){
+        document.getElementById("img_err").innerHTML="only images can accepted";
+    }
+    else{
     var imagereader = new FileReader();
     imagereader.readAsDataURL(input.files[0]);
     imagereader.onloadend = function(event) {
@@ -80,5 +91,5 @@ function OnProfilePicChange() {
         profileImage.src = event.target.result;
        
     }
-    
+}
 }
