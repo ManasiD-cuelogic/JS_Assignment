@@ -108,6 +108,17 @@ function validatetodoform(new_todo){
         isFormValid=false;
         document.getElementById("spn_startdateinvalid").innerHTML="invalid date";
     }
+    var isReminder=document.querySelector('input[name="reminder"]:checked').value
+    if(isReminder=='yes'){
+        if(!new_todo.reminderDate){
+            isFormValid=false;
+            document.getElementById("spn_reminderdate").innerHTML="Please enter/select date";
+        }
+        else if(!validateReminderDate(new_todo.reminderDate,new_todo.targetDate)){
+            isFormValid=false;
+            document.getElementById("spn_reminderdate").innerHTML="Reminder date must be greater than start date";
+        }
+    }
     if(!new_todo.categories || new_todo.categories.length==0){
         isFormValid=false;
          document.getElementById("spn_categories").style.display="block";
@@ -117,12 +128,18 @@ function validatetodoform(new_todo){
 function validatedate(targetdate){
     var today=new Date();
     today.setHours(0, 0, 0, 0); 
-    if(stringToDate(targetdate,"yyyy/mm/dd","/") < today){
+    if(stringToDate(targetdate,"yyyy-mm-dd","-") < today){
         return false;
     }
     return true;
 }
-
+function validateReminderDate(targetdate,sdate){
+    if(targetdate < sdate){
+        //console.log('hiiiiiiiiiiiiiiiii');
+        return false;
+    }
+    return true;
+}
 function stringToDate(_date,_format,_delimiter)
 {
             var formatLowerCase=_format.toLowerCase();
