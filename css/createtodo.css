@@ -18,6 +18,7 @@ header{
 }
 section{
     background-color: #AEB6BF ;
+    padding-bottom: 50px;
 }
 a {
 	display: inline-block;
@@ -29,11 +30,23 @@ a {
 }
 .createtodo{
     width: 500px;
-    margin: auto auto;
+    margin: 50px auto;
+    border: 1px solid #151D41;
+    border-radius: 10px;
+    text-align: justify;
+    padding-left: 50px;
+    padding-top: 30px;
 }
-.craete_form{
-    margin: auto;
+.edittodo_form{
+    width: 500px;
+    margin: 50px auto;
+    border: 1px solid #151D41;
+    border-radius: 10px;
+    text-align: justify;
+    padding-left: 50px;
+    padding-top: 30px;
 }
+
 h3{
     display: inline-block;
     padding-top: 30px;
@@ -68,9 +81,13 @@ h2{
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    font-size: 30px;
+    font-family: 'Roboto';
 }
-.lable{
-    padding-left: 20px;
+label{
+    font-size: 18px;
+    font-family: 'Montserrat';
+    font-weight: 600;
 }
 input[type=text],input[type=date]{
     display: inline-block;
@@ -96,11 +113,11 @@ input[type=submit]{
     font-family: 'Montserrat';
     color: #FFFFFF;
     background-color: #0FBF61;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px 10px 10px 10px;
     width: 170px;
     height: 50px;
-    margin:0 auto
+    margin:20px auto
    
 }
 .back{
