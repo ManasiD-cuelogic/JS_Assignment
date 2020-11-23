@@ -13,7 +13,7 @@
       <section>
         <header>
           <h3><a href="#">ToDo App</a></h3>
-          <a href="javascript:void(0);" id="logoutButton" class="logoutbtn">LogOut</a>
+          <a href="javascript:void(0);" id="logoutButton" class="logoutbtn">Log Out</a>
           <a href="dashboard.html" class="list">ToDo List</a>
           <a href="profile.html" class="profile">My Profile</a>
         </header>
@@ -21,14 +21,15 @@
           <h2>Edit ToDo</h2>
           <form>
             <input id="inputId" type="hidden" name="todoid" value="" />
-            <p id="spn_title" class="error"></p>
             <label for="todoTitle" class="lable">Title</label>
-            <input type="text" id="todoTitle" placeholder="title">
+            <p id="title_err" class="error"></p>
+            <input type="text" id="todoTitle" placeholder="title" onclick="removeError()">
             
-            <p id="spn_startdate" class="error"></p>
-            <p id="spn_startdateinvalid" class="error"></p>
+            <br>
             <label for="todoStartDate" class="lable">Select Date</label>
-            <input type="date" id="todoStartDate" placeholder="dd-mm-yyyy">
+            <p id="startdate_err" class="error"></p>
+            <p id="startdate_err" class="error"></p>
+            <input type="date" id="todoStartDate" placeholder="dd-mm-yyyy" onclick="removeError()">
                 
             <fieldset>
               <label class="lable">Is Public</label>
@@ -48,10 +49,9 @@
               <label for="reminderNo">No</label>
             </fieldset>
             <div id="div_reminder" style="display: none;">
-              <p id="spn_reminderdate"></p>
-              <span id="spn_reminderdateinvalid" style="display: none;">Reminder date must be current or future date only</span>
               <label for="reminderdate" class="lable">Reminder Date</label>
-              <input type="date" id="reminderDate" name="reminder" placeholder="dd-mm-yyyy"> 
+              <p id="reminderdate_err" class="error"></p>
+              <input type="date" id="reminderDate" name="reminder" placeholder="dd-mm-yyyy" onclick="removeError()"> 
             </div>
             
             <label for="todoCategory" class="lable">Select Category</label>
@@ -63,11 +63,11 @@
 
             <input type="checkbox" id="chk_personal" name="todoCategory" value="personal">
             <label for="personal">Personal</label>
-            <span id="spn_categories" style="display: none;">Please select category</span>
+            <p id="categoty_err" class="error" onclick="removeError()"></p>
            
             <div >
               <input id="updateTodoButton" class="updatebtn" type="submit" value="Update Task +">
-              <a href="dashboard.html" class="back">Back to Todo List!</a>
+              <!--<a href="dashboard.html" class="back">Back to Todo List!</a>-->
             </div>
             <br><br><br>
           </form>
