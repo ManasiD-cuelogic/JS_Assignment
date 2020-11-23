@@ -6,32 +6,31 @@
         <script src="javascript/createtodo.js" ></script>
         <script src="javascript/logout.js" ></script>
         <link rel="stylesheet" href="css/createtodo.css">
-        <title>ToDo App</title>`
+        <link rel="stylesheet" href="css/reset.css">
+        <title>ToDo App</title>
     </head>
     <body>
       <header>
         <h3><a class="title" href="#">ToDo App</a></h3>
-        <a href="javascript:void(0);" id="logoutButton" class="logoutbtn">LogOut</a>
+        <a href="javascript:void(0);" id="logoutButton" class="logoutbtn">Log Out</a>
         <a href="dashboard.html" class="list">ToDo List</a>
         <a href="profile.html" class="profile">My Profile</a>
       </header>
       <section>
-       
+        <h2>Create ToDo</h2>
         <form class="createtodo">
-          <div class="create_form">
-          <h2>Create ToDo</h2>
-          <label for="todoTitle" class="lable">Title</label>
+          <label for="todoTitle" class="label">Title :</label>
           <p id="title_err" class="error"></p>
           <input type="text" id="todoTitle" placeholder="title" onclick="removeError()">
 
           <br>
-          <label for="todoStartDate" class="lable">Select Date</label>
+          <label for="todoStartDate" class="label">Select Date :</label>
           <p id="startdate_err" class="error"></p>
           <input type="date" id="todoStartDate" onclick="removeError()">
                 
 
           <fieldset >
-            <label  class="lable">Is Public</label>
+            <label  class="label">Is Public :</label>
             <input type="radio" id="ispublicYes" name="public" value="yes">
             <label for="ispublicYes">Yes</label>
 
@@ -40,7 +39,7 @@
           </fieldset>
 
           <fieldset class="reminder">
-            <label class="lable">Is Reminder</label>
+            <label class="label">Is Reminder :</label>
             <input type="radio" id="reminderYes" name="reminder" value="yes" onclick="handleReminderClick(this);">
             <label for="reminderYes">Yes</label>
             
@@ -49,13 +48,13 @@
           </fieldset>
           
           <div id="div_reminder" style="display: none;">
-            <label for="reminderdate" class="lable">Reminder Date</label>
+            <label for="reminderdate" class="label">Reminder Date:</label>
             <p id="reminderdate_err" class="error"></p>
             <input type="date" id="reminderDate" name="reminder">
           </div>
           
           <p id="categories_err" class="error"></p>
-          <label for="todoCategory" class="lable">Select Category</label>
+          <label for="todoCategory" class="label">Select Category :</label>
           <input type="checkbox"  id="chk_office" name="todoCategory" value="office" onclick="removeError()">
           <label for="office">Office</label>
 
@@ -64,10 +63,8 @@
 
           <input type="checkbox" id="chk_personal" name="todoCategory" value="personal" onclick="removeError()">
           <label for="personal">Personal</label>
-
+          <br>  
           <input id="createTodoButton" type="submit" value="Add Task +">
-          <br>
-          </div>
         </form>
       </section>
     </body>
