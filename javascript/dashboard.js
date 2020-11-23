@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded",function(){
             <td>${(todoList[i].isDone)?"<del>"+todoList[i].title+"</del>":todoList[i].title}</td>
             <td>${todoList[i].targetDate}</td>
             <td>${(todoList[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
-            <td>${(todoList[i].reminderDate>Date())?"Yes":"No"}</td>
+            <td>${( Date.parse(todoList[i].reminderDate)< new Date())?"Yes":"No"}</td>
             <td>${todoList[i].categories.join(',')}</td>
             <td><button type="button" class="text-success" onclick="markasdone(${todoList[i].id})">Mark as done</button></td>
             <td><a href="edittodo.html?id=${todoList[i].id}"><i class="fa fa-edit" style="color:#000000;font-size:22px;"></i></a></td>
@@ -63,7 +63,7 @@ window.addEventListener("DOMContentLoaded",function(){
                   <td>${(filteredtodolist[i].isDone)?"<del>"+filteredtodolist[i].title+"</del>":filteredtodolist[i].title}</td>
                   <td>${filteredtodolist[i].targetDate}</td>
                   <td>${(filteredtodolist[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
-                  <td>${(filteredtodolist[i].reminderDate>Date())?"Yes":"No"}</td>
+                  <td>${( Date.parse(todoList[i].reminderDate)< new Date())?"Yes":"No"}</td>
                   <td>${filteredtodolist[i].categories.join(',')}</td>
                   <td><button type="button" class="text-success" onclick="markasdone(${filteredtodolist[i].id})">Mark as done</button></td>
                   <td><a href="edittodo.html?id=${filteredtodolist[i].id}"><i class="fa fa-edit" style="color:#000000;font-size:22px;"></i></a></td>
@@ -130,7 +130,7 @@ window.addEventListener("DOMContentLoaded",function(){
                 <td>${(filteredtodolist[i].isDone)?"<del>"+filteredtodolist[i].title+"</del>":filteredtodolist[i].title}</td>
                 <td>${filteredtodolist[i].targetDate}</td>
                 <td>${(filteredtodolist[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
-                <td>${(filteredtodolist[i].reminderDate>Date())?"Yes":"No"}</td>
+                <td>${( Date.parse(todoList[i].reminderDate)< new Date())?"Yes":"No"}</td>
                 <td>${filteredtodolist[i].categories.join(',')}</td>
                 <td><button type="button" class="text-success" onclick="markasdone(${filteredtodolist[i].id})">Mark as done</button></td>
                 <td><a href="edittodo.html?id=${filteredtodolist[i].id}"><i class="fa fa-edit" style="color:#000000;font-size:22px;"></i></a></td>
@@ -170,7 +170,7 @@ function searchByTitle(e){
             <td>${(filteredtodolist[i].isDone)?"<del>"+filteredtodolist[i].title+"</del>":filteredtodolist[i].title}</td>
             <td>${filteredtodolist[i].targetDate}</td>
             <td>${(filteredtodolist[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
-            <td>${(filteredtodolist[i].reminderDate>Date())?"Yes":"No"}</td>
+            <td>${( Date.parse(todoList[i].reminderDate)< new Date())?"Yes":"No"}</td>
             <td>${filteredtodolist[i].categories.join(',')}</td>
             <td><button type="button" class="text-success" onclick="markasdone(${filteredtodolist[i].id})">Mark as done</button></td>
             <td><a href="edittodo.html?id=${filteredtodolist[i].id}"><i class="fa fa-edit" style="color:#000000;font-size:22px;"></i></a></td>
@@ -199,10 +199,22 @@ function deletetodos(e){
   var newtodolist=todolist;
   //console.log(loggedinuser);
   //console.log(todolist);
-  if(todolist.length==0)
+  var table = document.getElementById("todoTbl");
+  var checkBoxes = table.getElementsByTagName("INPUT");
+  var count=0;
+  for (var i = 0; i < checkBoxes.length; i++){
+    if(!checkBoxes[i].checked){
+      count+=1;
+    }
+  }
+    if(count>0){
+      alert("Please select task to delete");
+    }
+  else if(todolist.length==0)
   {
     alert("nothing to delete");
   }
+
   else{
     var r = confirm("Are you sure, you want to delete selected task?");
     if (r == true) {

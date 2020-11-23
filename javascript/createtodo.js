@@ -73,31 +73,31 @@ function validatetodoform(new_todo){
     var isFormValid = true;
     if(new_todo.title==""){
         isFormValid=false;
-        document.getElementById("spn_title").style.display="block";
+        document.getElementById("title_err").innerHTML="Please enter todo title";
     }
     if(!new_todo.targetDate){
         isFormValid=false;
-        document.getElementById("spn_startdate").style.display="block";
+        document.getElementById("startdate_err").innerHTML="Please enter/select date";
     }
     else if(!validatedate(new_todo.targetDate)){
         isFormValid=false;
-        document.getElementById("spn_startdateinvalid").style.display="block";
+        document.getElementById("startdate_err").innerHTML=" Date must be current or future date only";
     }
     var isReminder=document.querySelector('input[name="reminder"]:checked').value
     if(isReminder=='yes'){
         if(!new_todo.reminderDate){
             isFormValid=false;
-            document.getElementById("spn_reminderdate").style.display="block";
+            document.getElementById("reminderdate_err").innerHTML="Please enter/select date";
         }
         else if(!validateReminderDate(new_todo.reminderDate,new_todo.targetDate)){
             isFormValid=false;
-            document.getElementById("spn_reminderdateinvalid").style.display="block";
+            document.getElementById("reminderdate_err").innerHTML="Reminder date must be current or future date only";
         }
     }
     if(!new_todo.categories || new_todo.categories.length==0){
         isFormValid=false;
-         document.getElementById("spn_categories").style.display=
-         "block";
+         document.getElementById("categories_err").innerHTML=
+         "Please select category";
     }
     
     return isFormValid;
@@ -140,4 +140,11 @@ function handleReminderClick(radioReminder){
     else{
         document.getElementById("div_reminder").style.display="none";
     }
+}
+function removeError(){
+    document.getElementById("title_err").innerHTML="";
+    document.getElementById("startdate_err").innerHTML="";
+    document.getElementById("reminderdate_err").innerHTML="";
+    document.getElementById("categories_err").innerHTML="";
+
 }

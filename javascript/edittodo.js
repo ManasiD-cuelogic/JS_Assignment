@@ -33,10 +33,14 @@ window.addEventListener("DOMContentLoaded",function(){
      {
         document.getElementById("chk_"+editedtodo.categories[i]).checked =true;
      }
-
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementById("todoStartDate").setAttribute('min', today);
+    document.getElementById("reminderDate").setAttribute('min', today);
 
     document.getElementById("updateTodoButton").addEventListener("click",editTodo)
 })
+
+
 function editTodo(e){
     e.preventDefault();
     const params = new URLSearchParams(window.location.search);
@@ -98,30 +102,30 @@ function validatetodoform(new_todo){
     var isFormValid = true;
     if(!new_todo.title){
         isFormValid=false;
-        document.getElementById("spn_title").innerHTML="Please Enter Tiltle";
+        document.getElementById("title_err").innerHTML="Please Enter Tiltle";
     }
     if(!new_todo.targetDate){
         isFormValid=false;
-        document.getElementById("spn_startdate").innerHTML="please enter/select date";
+        document.getElementById("startdate_err").innerHTML="please enter/select date";
     }
     if(!validatedate(new_todo.targetDate)){
         isFormValid=false;
-        document.getElementById("spn_startdateinvalid").innerHTML="invalid date";
+        document.getElementById("startdate_err").innerHTML="invalid date";
     }
     var isReminder=document.querySelector('input[name="reminder"]:checked').value
     if(isReminder=='yes'){
         if(!new_todo.reminderDate){
             isFormValid=false;
-            document.getElementById("spn_reminderdate").innerHTML="Please enter/select date";
+            document.getElementById("reminderdate_err").innerHTML="Please enter/select date";
         }
         else if(!validateReminderDate(new_todo.reminderDate,new_todo.targetDate)){
             isFormValid=false;
-            document.getElementById("spn_reminderdate").innerHTML="Reminder date must be greater than start date";
+            document.getElementById("reminderdate_err").innerHTML="Reminder date must be greater than start date";
         }
     }
     if(!new_todo.categories || new_todo.categories.length==0){
         isFormValid=false;
-         document.getElementById("spn_categories").style.display="block";
+         document.getElementById("categoty_err").innerHTML = "Please select category";
     }
     return isFormValid;
 }
@@ -163,7 +167,13 @@ function handleReminderClick(radioReminder){
         document.getElementById("div_reminder").style.display="none";
     }
 }
+function removeError(){
+    document.getElementById("title_err").innerHTML="";
+    document.getElementById("startdate_err").innerHTML="";
+    document.getElementById("reminderdate_err").innerHTML="";
+    document.getElementById("categoty_err").innerHTML="";
 
+}
 
 
 
