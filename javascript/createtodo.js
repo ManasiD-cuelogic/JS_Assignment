@@ -83,21 +83,21 @@ function validatetodoform(new_todo){
         isFormValid=false;
         document.getElementById("spn_startdateinvalid").style.display="block";
     }
-    else{}
     var isReminder=document.querySelector('input[name="reminder"]:checked').value
     if(isReminder=='yes'){
         if(!new_todo.reminderDate){
             isFormValid=false;
             document.getElementById("spn_reminderdate").style.display="block";
         }
-        else if(!validatedate(new_todo.reminderDate)){
+        else if(!validateReminderDate(new_todo.reminderDate,new_todo.targetDate)){
             isFormValid=false;
             document.getElementById("spn_reminderdateinvalid").style.display="block";
         }
     }
     if(!new_todo.categories || new_todo.categories.length==0){
         isFormValid=false;
-         document.getElementById("spn_categories").style.display="block";
+         document.getElementById("spn_categories").style.display=
+         "block";
     }
     
     return isFormValid;
@@ -107,6 +107,13 @@ function validatedate(targetdate){
     var today=new Date();
     today.setHours(0, 0, 0, 0); 
     if(stringToDate(targetdate,"yyyy-mm-dd","-") < today){
+        return false;
+    }
+    return true;
+}
+function validateReminderDate(targetdate,sdate){
+    if(targetdate < sdate){
+        //console.log('hiiiiiiiiiiiiiiiii');
         return false;
     }
     return true;
