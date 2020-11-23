@@ -66,6 +66,10 @@ function UpdateUserProfile(e){
         isFormValid=false;
         document.getElementById("lname_err").innerHTML="Please enter your last name";
     }
+    if(!user.address){
+        isFormValid=false;
+        document.getElementById("add_err").innerHTML="Please enter your address";
+    }
     var imgFilter= /.(gif|jpe|jpeg|JPG|JPEG|PNG|png|webp|bmp)$/i;
     if(!imgFilter.test(document.getElementById("profileimg").value)){
         isFormValid=false;
@@ -92,4 +96,11 @@ function OnProfilePicChange() {
        
     }
 }
+}
+function removeError()
+{
+  document.getElementById("fname_err").innerText ="";
+  document.getElementById("lname_err").innerText ="";
+  document.getElementById("add_err").innerText ="";
+  document.getElementById("img_err").innerText ="";
 }
