@@ -67,13 +67,13 @@ function ValidateRegisterForm(){
     }
     if(!user.confirmPassword){
         isFormValid=false;
-        document.getElementById("spn_confirmpwd").innerHTML = "Please enter confirm password";
+        document.getElementById("confirmpwderr").innerHTML = "Please enter confirm password";
     }
     if(user.password != user.confirmPassword){
         isFormValid=false;
         document.getElementById("confirmpwderr").innerHTML = "Password & Confirm Password should match";
     }
-    if(!isImageValid(user.profilePic)){
+    if(!isImageValid()){
         isFormValid=false;
         document.getElementById("imgerr").innerHTML = "Only Images Can Accepted";
     }
@@ -81,7 +81,7 @@ function ValidateRegisterForm(){
 };
 
 function isEmailValid(email){
-    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var filter = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     return filter.test(email);
 }
 
@@ -99,9 +99,9 @@ function isEmailExist(email){
     
     return isEmailExist;
 }
-function isImageValid(profilePic){
-    var imgFilter= /.(gif|jpe?g|png|webp|bmp)$/i;
-    return imgFilter.test(profilePic);
+function isImageValid(){
+    var imgFilter= /.(gif|jpe|jpeg|JPG|JPEG|PNG|png|webp|bmp)$/i;
+    return(imgFilter.test(document.getElementById("profileimg").value));
 }
 function getImageData() {
     var input = document.getElementById("profileimg");
@@ -122,5 +122,5 @@ function removeError()
   document.getElementById("email_exist").innerText ="";
   document.getElementById("pwderr").innerText ="";
   document.getElementById("confirmpwderr").innerText ="";
-
+  document.getElementById("imgerr").innerHTML = "";
 }
