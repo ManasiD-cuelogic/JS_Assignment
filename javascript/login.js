@@ -31,7 +31,7 @@ function ValidateUserLogin(logindetails){
         document.getElementById("passmail").innerHTML="Enter Email & Password";
         isUserExist=false;
     }
-    if(logindetails.email==""){
+    else if(logindetails.email==""){
         document.getElementById("mailerr").innerHTML="Please Enter Email";
         isUserExist=false;
     }
