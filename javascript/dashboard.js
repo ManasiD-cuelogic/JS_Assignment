@@ -18,10 +18,11 @@ window.addEventListener("DOMContentLoaded",function(){
             <td>${(todoList[i].isDone)?"<del>"+todoList[i].title+"</del>":todoList[i].title}</td>
             <td>${todoList[i].targetDate}</td>
             <td>${(todoList[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
-            <td>${(todoList[i].targetDate>Date())?"Yes":"No"}</td>
+            <td>${(todoList[i].reminderDate>Date())?"Yes":"No"}</td>
             <td>${todoList[i].categories.join(',')}</td>
             <td><button type="button" class="text-success" onclick="markasdone(${todoList[i].id})">Mark as done</button></td>
-            <td><a href="edittodo.html?id=${todoList[i].id}"><i class="fa fa-edit"></i>Edit</a></td>
+            <td><a href="edittodo.html?id=${todoList[i].id}"><i class="fa fa-edit" style="color:#000000;font-size:22px;"></i></a></td>
+            <td style="display:none;">${todoList[i].reminderDate}</td>
               </tr>`;
           }
           
@@ -62,10 +63,11 @@ window.addEventListener("DOMContentLoaded",function(){
                   <td>${(filteredtodolist[i].isDone)?"<del>"+filteredtodolist[i].title+"</del>":filteredtodolist[i].title}</td>
                   <td>${filteredtodolist[i].targetDate}</td>
                   <td>${(filteredtodolist[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
-                  <td>${(filteredtodolist[i].targetDate>Date())?"Yes":"No"}</td>
+                  <td>${(filteredtodolist[i].reminderDate>Date())?"Yes":"No"}</td>
                   <td>${filteredtodolist[i].categories.join(',')}</td>
                   <td><button type="button" class="text-success" onclick="markasdone(${filteredtodolist[i].id})">Mark as done</button></td>
-                  <td><a href="edittodo.html?id=${filteredtodolist[i].id}"><i class="fa fa-edit"></i>Edit</a></td>
+                  <td><a href="edittodo.html?id=${filteredtodolist[i].id}"><i class="fa fa-edit" style="color:#000000;font-size:22px;"></i></a></td>
+                  <td style="display:none;">${todoList[i].reminderDate}</td>
                   </tr>`;
 
               }
@@ -83,8 +85,26 @@ window.addEventListener("DOMContentLoaded",function(){
     });
 
     //search by category
+    let a = document.getElementById("all");
+    let comp = document.getElementById("comp");
+    let pend = document.getElementById("pend");
+
+    let home = document.getElementById("home");
+    let personal = document.getElementById("personal");
+    let office = document.getElementById("office");
+
+
     document.getElementsByName('searchByCat').forEach(function(item) {
       item.addEventListener("click", function(e) {
+          pend.checked=false;
+          comp.checked = false;
+          a.checked=false;
+
+          if(home.checked == false && personal.checked == false && office.checked ==false)
+          {
+            location.reload();
+          }
+
           var selected_Categories=document.querySelectorAll('input[name="searchByCat"]:checked');
           var catVals = [];
           for(var i = 0; i < selected_Categories.length; i++)
@@ -110,10 +130,11 @@ window.addEventListener("DOMContentLoaded",function(){
                 <td>${(filteredtodolist[i].isDone)?"<del>"+filteredtodolist[i].title+"</del>":filteredtodolist[i].title}</td>
                 <td>${filteredtodolist[i].targetDate}</td>
                 <td>${(filteredtodolist[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
-                <td>${(filteredtodolist[i].targetDate>Date())?"Yes":"No"}</td>
+                <td>${(filteredtodolist[i].reminderDate>Date())?"Yes":"No"}</td>
                 <td>${filteredtodolist[i].categories.join(',')}</td>
                 <td><button type="button" class="text-success" onclick="markasdone(${filteredtodolist[i].id})">Mark as done</button></td>
-                <td><a href="edittodo.html?id=${filteredtodolist[i].id}"><i class="fa fa-edit"></i>Edit</a></td>
+                <td><a href="edittodo.html?id=${filteredtodolist[i].id}"><i class="fa fa-edit" style="color:#000000;font-size:22px;"></i></a></td>
+                <td style="display:none;">${todoList[i].reminderDate}</td>
                 </tr>`;
             }
             
@@ -149,10 +170,11 @@ function searchByTitle(e){
             <td>${(filteredtodolist[i].isDone)?"<del>"+filteredtodolist[i].title+"</del>":filteredtodolist[i].title}</td>
             <td>${filteredtodolist[i].targetDate}</td>
             <td>${(filteredtodolist[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
-            <td>${(filteredtodolist[i].targetDate>Date())?"Yes":"No"}</td>
+            <td>${(filteredtodolist[i].reminderDate>Date())?"Yes":"No"}</td>
             <td>${filteredtodolist[i].categories.join(',')}</td>
             <td><button type="button" class="text-success" onclick="markasdone(${filteredtodolist[i].id})">Mark as done</button></td>
-            <td><a href="edittodo.html?id=${filteredtodolist[i].id}"><i class="fa fa-edit"></i>Edit</a></td>
+            <td><a href="edittodo.html?id=${filteredtodolist[i].id}"><i class="fa fa-edit" style="color:#000000;font-size:22px;"></i></a></td>
+            <td style="display:none;">${todoList[i].reminderDate}</td>
             </tr>`;
         }
         
@@ -175,28 +197,36 @@ function deletetodos(e){
   var loggedinuser=JSON.parse(sessionStorage.getItem("loggedinuser"));
   var todolist=users.find( a => a.email == loggedinuser.email).todos;
   var newtodolist=todolist;
-  var r = confirm("Are you sure, you want to delete selected task?");
-  if (r == true) {
-      var table = document.getElementById("todoTbl");
-      var checkBoxes = table.getElementsByTagName("INPUT");
-      for (var i = 0; i < checkBoxes.length; i++) {
-          if (checkBoxes[i].checked) {
-              var id = checkBoxes[i].getAttribute("data-id");
-              newtodolist=newtodolist.filter(function(value, index, arr){ return value.id != id;});
-          }
-      }
-      
-      for(var i=0;i<users.length;i++){
-          if(users[i].email==loggedinuser.email){
-              users[i].todos=newtodolist;
-              break;
-          }
-      }
-      localStorage.setItem("userlist",JSON.stringify(users));
-      window.location="dashboard.html";
-  } else {
-      return false;
+  //console.log(loggedinuser);
+  //console.log(todolist);
+  if(todolist.length==0)
+  {
+    alert("nothing to delete");
   }
+  else{
+    var r = confirm("Are you sure, you want to delete selected task?");
+    if (r == true) {
+        var table = document.getElementById("todoTbl");
+        var checkBoxes = table.getElementsByTagName("INPUT");
+        for (var i = 0; i < checkBoxes.length; i++) {
+            if (checkBoxes[i].checked) {
+                var id = checkBoxes[i].getAttribute("data-id");
+                newtodolist=newtodolist.filter(function(value, index, arr){ return value.id != id;});
+            }
+        }
+        
+        for(var i=0;i<users.length;i++){
+            if(users[i].email==loggedinuser.email){
+                users[i].todos=newtodolist;
+                break;
+            }
+        }
+        localStorage.setItem("userlist",JSON.stringify(users));
+        window.location="dashboard.html";
+    } else {
+        return false;
+    }
+}
 };
 
 //function for mark as done for completed todo
