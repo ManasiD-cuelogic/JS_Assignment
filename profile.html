@@ -18,42 +18,45 @@
         <section>
             <div class="profile_update">
             <h2>User Profile</h2>
-            <form>
+            <form class="profile_form">
                 <div>
-                    <lable for="fname" class="lable">First Name</lable>
+                    <label for="fname" class="label">First Name</label>
                     <p id="fname_err" class="error"></p>
-                    <input type="text" id="fname" placeholder="First Name">
+                    <input type="text" id="fname" placeholder="First Name" onclick="removeError()">
                 </div>
 
                 <div>
-                    <label for="lname" class="lable"> Last Name</label>
+                    <label for="lname" class="label"> Last Name</label>
                     <p id="lname_err" class="error"></p>
-                    <input type="text" id="lname" placeholder="Last Name">
+                    <input type="text" id="lname" placeholder="Last Name" onclick="removeError()">
                 </div>
 
                 <div>
-                    <label for="mailid" class="lable">Email</label>
+                    <label for="mailid" class="label">Email</label>
+                    <br>
                     <input type="email" id="mailid" readonly>
                 </div>
             
                 <div>
-                    <lable for="gender" class="lable">Gender:</lable>
+                    <label for="gender" class="label">Gender: </label>
                     <input type= "radio" value="male" name="gender" id="radio_male">
-                    <lable for="male">male</lable>
+                    <label for="male">male</label>
                     <input type="radio" value="female" name="gender" id="radio_female">
-                    <lable for="female">female</lable>
+                    <label for="female">female</label>
                 </div>
 
                 <div>
-                    <label for="add" class="lable">Address</label>
-                    <input type="text" id="add" placeholder="Address">
+                    <br>
+                    <label for="add" class="label">Address</label>
+                    <p id="add_err" class="error"></p>
+                    <input type="text" id="add" placeholder="Address" onclick="removeError()">
                 </div>
 
                 <div>
-                    <label for="profileimg" class="lable">Profile Image</label>
+                    <label for="profileimg" class="label">Profile Image</label>
                     <p id="img_err" class="error"></p>
-                    <img style="height: 30%;width: 30%;" id="imgProfile" />
-                    <input type="file" id="profileimg"  onchange="OnProfilePicChange()"/>
+                    <img id="imgProfile" />
+                    <input type="file" id="profileimg" onclick="removeError()" onchange="OnProfilePicChange()"/>
                 </div>
                 <div>
                     <br>
