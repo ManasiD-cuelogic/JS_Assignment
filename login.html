@@ -12,20 +12,23 @@
         
             <section>
             <div class="login_form">
-                <h2>Login</h2>
-                <br>
                 <form>
-                    <lable for = "mailid">Enter register mail-id</lable>
-                    <input id="mailid" type="email" class="email" placeholder="email" onclick="removeError()">
+                    <fieldset>
+                    <legend><h2>Login</h2></legend>
+                    <label for = "mailid">Enter register mail-id :</label>
                     <p id="mailerr" class="text_danger"></p>
-                    <lable for = "pwd">Enter password</lable>
+                    <input id="mailid" type="email" class="email" placeholder="email" onclick="removeError()">
+                    
+                    <label for = "pwd">Enter password :</label>
                     <p id="passerr" class="text_danger"></p>
                     <input type="password" class = "password" id="pwd" placeholder="password" onclick="removeError()">
+                    
                     <p id="passmail" class="text_danger"></p>
                     <p id="loginerr" class="text_danger"></p>
                     <input type="submit" id="loginbutton" value="login">
+                    </fieldset>
                 </form>
-                <span>Not an user?</span><a href="registration.html"> Register Here!</a>
+                <label>Not an user?</label><a href="registration.html"> Register Here!</a>
             </div>
             </section>
     
