@@ -23,14 +23,15 @@ function LoginUser(e){
 };
 
 function ValidateUserLogin(logindetails){
-    console.log(logindetails.email);
-    console.log(logindetails.password);
+    var userList=JSON.parse(localStorage.getItem('userlist'));
+    //console.log(logindetails.email);
+    //console.log(logindetails.password);
     var isUserExist=false;
     if(logindetails.email=="" && logindetails.password==""){
         document.getElementById("passmail").innerHTML="Enter Email & Password";
         isUserExist=false;
     }
-    else if(logindetails.email==""){
+    if(logindetails.email==""){
         document.getElementById("mailerr").innerHTML="Please Enter Email";
         isUserExist=false;
     }
@@ -38,24 +39,33 @@ function ValidateUserLogin(logindetails){
         document.getElementById("passerr").innerHTML="Please Enter Password";
         isUserExist=false;
     }
+    else if(userList == null){
+        document.getElementById("loginerr").innerHTML="Please Register First";
+    }
     else{
-    var userList=JSON.parse(localStorage.getItem('userlist'));
+        console.log(userList);
     for(var i=0;i<userList.length;i++){
+        console.log(userList[i].email);
         if(userList[i].email===logindetails.email && userList[i].password===logindetails.password){
             isUserExist=true;
             break;
         }
         else if(userList[i].email!==logindetails.email){
-            document.getElementById("loginerr").innerHTML="Invalid Email";
+            // document.getElementById("loginerr").innerHTML="Invalid Email";
             isUserExist=false;
-            break;
+            
         }
         else if(userList[i].password!==logindetails.password){
-            document.getElementById("loginerr").innerHTML="Password Invalid";
+            // document.getElementById("loginerr").innerHTML="Password Invalid";
             isUserExist=false;
-            break;
+            
         }
         
+    }
+    if(!isUserExist)
+    {
+        document.getElementById("loginerr").innerHTML="Username/Password Invalid";
+
     }
 }
     return isUserExist;
