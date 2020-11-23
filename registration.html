@@ -8,54 +8,56 @@
         <title>Registration form</title>
 
     </head>
-    <body>
+    <body class="body">
         <!--<div class=container>-->
             <section>
                 <h1>Create Your Account</h1>
-                <form>
-                    <div class="left">
-                        <lable for="fname">Enter FirstName:</lable>
+                <form class="registration_form">
+                    <div>
+                        <label for="fname">Enter FirstName :</label>
                         <p id="fnameerr" class="error"></p>
                         <input type="text" placeholder="Enter firstname" name="fname" id="fname" onclick="removeError()">
                     </div>
 
-                    <div class="right">
-                        <lable for="lname">Enter LastName:</lable><p id="lnameerr" class="error"></p>
+                    <div>
+                        <label for="lname">Enter LastName :</label><p id="lnameerr" class="error"></p>
                         <input type="text" placeholder="Enter lastname" name="lname" id="lname" onclick="removeError()">
                     </div>
 
-                    <div class="left">
-                        <label for="mailid">Enter Email-ID:</label><p id="emailerr" class="error"></p>
+                    <div>
+                        <label for="mailid">Enter Email-ID :</label><p id="emailerr" class="error"></p>
                         <p id="email_wrong" class="error"></p>
                         <p id="email_exist" class="error"></p>
                         <input type="email" placeholder="Enter email-id " name="mailid" id="mailid" onclick="removeError()">
                     </div>
 
-                    <div class="right">
-                        <lable for="pwd">Enter Password:</lable><p id="pwderr" class="error"></p>
+                    <div>
+                        <label for="pwd">Enter Password :</label><p id="pwderr" class="error"></p>
                         <input type="password" title="Password of 1 cap 1 dig and 1 sepcial" name = "pwd" id = "pwd" onclick="removeError()">
                     </div>
 
-                    <div class="left">
-                        <lable for="cpwd">Enter Confirm Password:</lable><p id="confirmpwderr" class="error"></p>
+                    <div>
+                        <label for="cpwd">Enter Confirm Password :</label><p id="confirmpwderr" class="error"></p>
                         <input type="password" name="cpwd" id="cpwd" onclick="removeError()">
                     </div>
 
-                    <div class="right">
-                        <lable for="add">Enter Address:</lable><br>
-                        <input type="text" onfocus="this.value=''"value="Enter address here" name="add" id="add">
+                    <div>
+                        <label for="add">Enter Address :</label>
+                        <p id="add_err" class="error"></p>
+                        <input type="text" onfocus="this.value=''"value="Enter address here" name="add" id="add" onclick="removeError()">
                     </div>
 
-                    <div class="left gender">
-                        <lable for="gender">Gender:</lable>
+                    <div>
+                        <label for="gender">Gender :</label>
                         <input type= "radio" value="male" name="gender" id="redio1">
-                        <lable for="male">male</lable>
+                        <label for="male">male</label>
                         <input type="radio" value="female" name = "gender" id="redio2">
-                        <lable for="female">female</lable><br>
+                        <label for="female">female</label><br>
                     </div>
     
-                    <div class="right">
-                        <lable for="profile-img">Profile Picture:</lable>
+                    <div>
+                        <br>
+                        <label for="profile-img">Profile Picture :</label>
                         <p id="imgerr" class="error"></p>
                         <input type="file" name=profile-img id="profileimg" onchange="getImageData();" onclick="removeError()" required>
                         <img style="height: 5%;width: 10%;" id="output" />
@@ -63,7 +65,7 @@
 
                     <div class="submit-button">
                         <input type="submit" id="register" value="Register">
-                        <a href="login.html">Back to Login</a>
+                        <a href="login.html" class="login">Back to Login!!</a>
                     </div>
                     <br>
                 </form>
