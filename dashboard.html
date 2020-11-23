@@ -7,17 +7,18 @@
     <script src="javascript/logout.js" ></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>ToDo App</title>
   </head>
   <body>
     <header>
       <h3><a href="#" class="h3">ToDo App</a></h3>
-      <a href="javascript:void(0);" id="logoutButton" class="logoutbtn" style="float:right;">LogOut</a>
+      <a href="javascript:void(0);" id="logoutButton" class="logoutbtn" style="float:right;">Log Out</a>
       <a href="profile.html" class="profilebtn" style="float: right;">My Profile</a>
     </header>
     
     <section>
-      <h2>Todo List</h2>
+      <h2>ToDo List</h2>
       <div>
         <input type="text" placeholder="Search by title" id="titleSearch"/>
         <a href="createtodo.html" class="btn" style="float: right;">Create Todo</a>
@@ -25,16 +26,16 @@
       
       <div class="status">
         <b>Status : </b>
-        <input type="radio" name="statusSearch" value="all" checked> All
-        <input type="radio" name="statusSearch" value="completed"> Completed 
-        <input type="radio" name="statusSearch" value="pending"> Pending
+        <input type="radio" id="all" name="statusSearch" value="all" checked> All
+        <input type="radio" id="comp" name="statusSearch" value="completed"> Completed 
+        <input type="radio" id="pend" name="statusSearch" value="pending"> Pending
       </div>
       
       <div class="category">
         <b>Category: </b>
-        <input type="checkbox" name="searchByCat" value="office"> Office 
-        <input type="checkbox" name="searchByCat" value="home"> Home 
-        <input type="checkbox" name="searchByCat" value="personal"> Personal
+        <input type="checkbox" id="office" name="searchByCat" value="office"> Office 
+        <input type="checkbox" id="home" name="searchByCat" value="home"> Home 
+        <input type="checkbox" id="personal" name="searchByCat" value="personal"> Personal
       </div>
     
       <div class="todotable">
@@ -48,6 +49,7 @@
             <th>Category</th>
             <th>Mark Done</th>
             <th>Edit</th>
+            <th style="display: none;">Rdate</th>
         </thead>
         <tbody id="tbl_todolist_tbody"></tbody>
       </table>
