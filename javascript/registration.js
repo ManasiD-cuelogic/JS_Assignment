@@ -73,6 +73,10 @@ function ValidateRegisterForm(){
         isFormValid=false;
         document.getElementById("confirmpwderr").innerHTML = "Password & Confirm Password should match";
     }
+    if(!user.address){
+        isFormValid=false;
+        document.getElementById("add_err").innerHTML = "Please enter your address"
+    }
     if(!isImageValid()){
         isFormValid=false;
         document.getElementById("imgerr").innerHTML = "Only Images Can Accepted";
@@ -123,4 +127,5 @@ function removeError()
   document.getElementById("pwderr").innerText ="";
   document.getElementById("confirmpwderr").innerText ="";
   document.getElementById("imgerr").innerHTML = "";
+  document.getElementById("add_err").innerHTML = "";
 }
