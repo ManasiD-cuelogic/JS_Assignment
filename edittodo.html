@@ -19,42 +19,43 @@
         </header>
         <div>
           <h2>Edit ToDo</h2>
-          <form>
+          <form class="edittodo_form">
             <input id="inputId" type="hidden" name="todoid" value="" />
-            <label for="todoTitle" class="lable">Title</label>
+            <label for="todoTitle" class="label">Title :</label>
             <p id="title_err" class="error"></p>
             <input type="text" id="todoTitle" placeholder="title" onclick="removeError()">
             
             <br>
-            <label for="todoStartDate" class="lable">Select Date</label>
+            <label for="todoStartDate" class="label">Select Date :</label>
             <p id="startdate_err" class="error"></p>
             <p id="startdate_err" class="error"></p>
             <input type="date" id="todoStartDate" placeholder="dd-mm-yyyy" onclick="removeError()">
                 
             <fieldset>
-              <label class="lable">Is Public</label>
+              <label class="label">Is Public :</label>
               <input type="radio" id="isPublic_Yes" name="public" value="yes">
               <label for="isPublic_Yes">Yes</label>
 
               <input type="radio" id="isPublic_No" name="public" value="No" checked>
-              <label for="isPublic_No" class="lable">No</label>
+              <label for="isPublic_No" class="label">No</label>
             </fieldset>
 
             <fieldset id="fieldReminder">
-              <label class="lable">Is Reminder</label>
+              <label class="label">Is Reminder :</label>
               <input type="radio" id="reminderYes" name="reminder" value="yes" onclick="handleReminderClick(this);">
               <label for="reminderYes">Yes</label>
               
               <input type="radio" id="reminderNo" name="reminder" value="No" onclick="handleReminderClick(this);">
               <label for="reminderNo">No</label>
             </fieldset>
+
             <div id="div_reminder" style="display: none;">
-              <label for="reminderdate" class="lable">Reminder Date</label>
+              <label for="reminderdate" class="label">Reminder Date :</label>
               <p id="reminderdate_err" class="error"></p>
               <input type="date" id="reminderDate" name="reminder" placeholder="dd-mm-yyyy" onclick="removeError()"> 
             </div>
             
-            <label for="todoCategory" class="lable">Select Category</label>
+            <label for="todoCategory" class="label">Select Category :</label>
             <input type="checkbox"  id="chk_office" name="todoCategory" value="office">
             <label for="office">Office</label>
 
