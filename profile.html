@@ -19,6 +19,8 @@
             <div class="profile_update">
             <h2>User Profile</h2>
             <form class="profile_form">
+                <fieldset>
+                    <legend> <img id="imgProfile" /></legend>
                 <div>
                     <label for="fname" class="label">First Name</label>
                     <p id="fname_err" class="error"></p>
@@ -55,13 +57,13 @@
                 <div>
                     <label for="profileimg" class="label">Profile Image</label>
                     <p id="img_err" class="error"></p>
-                    <img id="imgProfile" />
                     <input type="file" id="profileimg" onclick="removeError()" onchange="OnProfilePicChange()"/>
                 </div>
                 <div>
                     <br>
                     <input id="updateProfile" type="submit" value="Update" class="updatebtn">
                 </div>
+                </fieldset>
             </form>
             </div>
         </section>
