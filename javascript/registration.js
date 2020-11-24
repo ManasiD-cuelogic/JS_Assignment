@@ -38,6 +38,7 @@ function ValidateRegisterForm(){
         email:document.getElementById("mailid").value,
         password:document.getElementById("pwd").value,
         confirmPassword:document.getElementById("cpwd").value,
+        address:document.getElementById("add").value,
         profilePic:document.getElementById("profileimg").src,
     };
     var isFormValid = true;
@@ -73,7 +74,7 @@ function ValidateRegisterForm(){
         isFormValid=false;
         document.getElementById("confirmpwderr").innerHTML = "Password & Confirm Password should match";
     }
-    if(user.address==""){
+    if(!user.address){
         isFormValid=false;
         document.getElementById("add_err").innerHTML = "Please enter your address"
     }

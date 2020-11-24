@@ -54,7 +54,9 @@ function UpdateUserProfile(e){
     function ValidateUpdateProfileForm(){
         var user={
             firstName:document.getElementById("fname").value,
-            lastName:document.getElementById("lname").value
+            lastName:document.getElementById("lname").value,
+            address:document.getElementById("add").value,
+            profilePic:document.getElementById("profileimg").src,
         };
 
     var isFormValid = true;
@@ -81,11 +83,11 @@ function UpdateUserProfile(e){
 function OnProfilePicChange() {
     var input = document.getElementById("profileimg");
     console.log(input.value);
-    var imgFilter= /.(gif|jpe|jpeg|JPG|JPEG|PNG|png|webp|bmp)$/i;
+    /*var imgFilter= /.(gif|jpe|jpeg|JPG|JPEG|PNG|png|webp|bmp)$/i;
     if(!imgFilter.test(input.value)){
         document.getElementById("img_err").innerHTML="only images can accepted";
-    }
-    else{
+    }*/
+    //else{
     var imagereader = new FileReader();
     imagereader.readAsDataURL(input.files[0]);
     imagereader.onloadend = function(event) {
@@ -96,7 +98,7 @@ function OnProfilePicChange() {
        
     }
 }
-}
+//}
 function removeError()
 {
   document.getElementById("fname_err").innerText ="";
