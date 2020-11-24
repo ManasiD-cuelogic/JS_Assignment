@@ -203,11 +203,11 @@ function deletetodos(e){
   var checkBoxes = table.getElementsByTagName("INPUT");
   var count=0;
   for (var i = 0; i < checkBoxes.length; i++){
-    if(!checkBoxes[i].checked){
+    if(checkBoxes[i].checked){
       count+=1;
     }
   }
-    if(count>0){
+    if(count==0){
       alert("Please select task to delete");
     }
   else if(todolist.length==0)
