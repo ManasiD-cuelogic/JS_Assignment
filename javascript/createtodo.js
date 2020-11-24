@@ -91,7 +91,7 @@ function validatetodoform(new_todo){
         }
         else if(!validateReminderDate(new_todo.reminderDate,new_todo.targetDate)){
             isFormValid=false;
-            document.getElementById("reminderdate_err").innerHTML="Reminder date must be current or future date only";
+            document.getElementById("reminderdate_err").innerHTML="Reminder date must be gratter than or equal stat date";
         }
     }
     if(!new_todo.categories || new_todo.categories.length==0){
