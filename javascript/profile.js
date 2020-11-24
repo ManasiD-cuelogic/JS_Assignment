@@ -73,10 +73,12 @@ function UpdateUserProfile(e){
         document.getElementById("add_err").innerHTML="Please enter your address";
     }
     var imgFilter= /.(gif|jpe|jpeg|JPG|JPEG|PNG|png|webp|bmp)$/i;
+    if(document.getElementById("profileimg").value!=""){
     if(!imgFilter.test(document.getElementById("profileimg").value)){
         isFormValid=false;
         document.getElementById("img_err").innerHTML="only images can accepted";
     }
+}
     return isFormValid;
 };
 
