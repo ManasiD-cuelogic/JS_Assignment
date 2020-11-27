@@ -18,7 +18,7 @@ header{
 }
 section{
     background-color: #AEB6BF ;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 a {
 	display: inline-block;
@@ -30,7 +30,7 @@ a {
 }
 .createtodo{
     width: 500px;
-    margin: 50px auto;
+    margin: 40px auto;
     border: 1px solid #151D41;
     border-radius: 10px;
     text-align: justify;
@@ -39,7 +39,7 @@ a {
 }
 .edittodo_form{
     width: 500px;
-    margin: 50px auto;
+    margin: 40px auto;
     border: 1px solid #151D41;
     border-radius: 10px;
     text-align: justify;
@@ -131,4 +131,8 @@ input[type=submit]{
     color: #d9534f;
     padding-left: 20px ;
     font-weight: bold;
+}
+footer{
+    background-color: #34495E;
+    height: 80px;
 }
