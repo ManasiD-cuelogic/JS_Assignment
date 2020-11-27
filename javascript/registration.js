@@ -78,7 +78,11 @@ function ValidateRegisterForm(){
         isFormValid=false;
         document.getElementById("add_err").innerHTML = "Please enter your address"
     }
-    if(!isImageValid()){
+    if(document.getElementById("profileimg").value==""){
+        isFormValid=false;
+        document.getElementById("imgerr").innerHTML = "please upload profile photo";
+    }
+    else if(!isImageValid()){
         isFormValid=false;
         document.getElementById("imgerr").innerHTML = "Only Images Can Accepted";
     }
