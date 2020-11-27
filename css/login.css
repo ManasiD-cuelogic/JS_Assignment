@@ -74,11 +74,11 @@ a{
     font-size: 16px;
 }
 footer{
-    height: 80px;
-    background-color: #FFFFFF;
+    height: 100px;
+    background-color:  #34495E;
 }
 h3{
-    color: #FFFFFF;git 
+    color: #FFFFFF;
     text-decoration: none;
     text-shadow: 4px 4px 4px #000000;
     padding-top: 20px;

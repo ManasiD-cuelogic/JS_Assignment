@@ -163,5 +163,18 @@ input[type=submit]{
     padding-bottom: 15px;
 }
 .error{
-    color: ff0000;
+    color: #ff0000;
+}
+footer{
+    height: 100px;
+    background-color:  #34495E;
+    position: relative;
+    
+}
+h3{
+    color: #FFFFFF;
+    text-decoration: none;
+    text-shadow: 4px 4px 4px #000000;
+    padding-left: 20px;
+    padding-top: 20px;
 }

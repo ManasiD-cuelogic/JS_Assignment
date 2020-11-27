@@ -8,6 +8,7 @@ a{
 }
 section{
     background-color: #AEB6BF ;
+    padding-bottom: 20px;
 }
 h3{
     display: inline-block;
@@ -88,4 +89,8 @@ table{
     color: #0FBF61 ;
     background-color:#ECF0F1  ;
     padding: 5px 5px 5px 5px;
+}
+p{
+    text-align: center;
+    padding-top: 50px;
 }
