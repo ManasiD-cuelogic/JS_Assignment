@@ -22,19 +22,19 @@
                 <fieldset>
                     <legend> <img id="imgProfile" /></legend>
                 <div>
-                    <label for="fname" class="label">First Name</label>
-                    <p id="fname_err" class="error"></p>
+                    <label for="fname" class="label">First Name:</label>
+                    <span id="fname_err" class="error"></span>
                     <input type="text" id="fname" placeholder="First Name" onclick="removeError()">
                 </div>
 
                 <div>
-                    <label for="lname" class="label"> Last Name</label>
-                    <p id="lname_err" class="error"></p>
+                    <label for="lname" class="label"> Last Name:</label>
+                    <span id="lname_err" class="error"></span>
                     <input type="text" id="lname" placeholder="Last Name" onclick="removeError()">
                 </div>
 
                 <div>
-                    <label for="mailid" class="label">Email</label>
+                    <label for="mailid" class="label">Email:</label>
                     <br>
                     <input type="email" id="mailid" readonly>
                 </div>
@@ -49,14 +49,14 @@
 
                 <div>
                     <br>
-                    <label for="add" class="label">Address</label>
-                    <p id="add_err" class="error"></p>
+                    <label for="add" class="label">Address:</label>
+                    <span id="add_err" class="error"></span>
                     <input type="text" id="add" placeholder="Address" onclick="removeError()">
                 </div>
 
                 <div>
-                    <label for="profileimg" class="label">Profile Image</label>
-                    <p id="img_err" class="error"></p>
+                    <label for="profileimg" class="label">Profile Image:</label>
+                    <span id="img_err" class="error"></span>
                     <input type="file" id="profileimg" onclick="removeError()" onchange="OnProfilePicChange()"/>
                 </div>
                 <div>

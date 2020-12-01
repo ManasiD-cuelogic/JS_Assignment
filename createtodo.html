@@ -19,13 +19,13 @@
       <section>
         <h2>Create ToDo</h2>
         <form class="createtodo">
-          <label for="todoTitle" class="label">Title :</label>
           <p id="title_err" class="error"></p>
+          <label for="todoTitle" class="label">Title:</label><br>
           <input type="text" id="todoTitle" placeholder="title" onclick="removeError()">
 
           <br>
-          <label for="todoStartDate" class="label">Select Date :</label>
           <p id="startdate_err" class="error"></p>
+          <label for="todoStartDate" class="label">Select Date:</label><br>
           <input type="date" id="todoStartDate" onclick="removeError()">
                 
 
@@ -48,8 +48,8 @@
           </fieldset>
           
           <div id="div_reminder" style="display: none;">
-            <label for="reminderdate" class="label">Reminder Date:</label>
             <p id="reminderdate_err" class="error"></p>
+            <label for="reminderdate" class="label">Reminder Date:</label><br>
             <input type="date" id="reminderDate" name="reminder">
           </div>
           

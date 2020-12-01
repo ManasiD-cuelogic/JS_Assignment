@@ -18,35 +18,33 @@
                 <form class="registration_form">
                     <div>
                         <label for="fname">Enter FirstName :</label>
-                        <p id="fnameerr" class="error"></p>
+                        <span id="fnameerr" class="error"></span>
                         <input type="text" placeholder="Enter firstname" name="fname" id="fname" onclick="removeError()">
                     </div>
 
                     <div>
-                        <label for="lname">Enter LastName :</label><p id="lnameerr" class="error"></p>
+                        <label for="lname">Enter LastName :</label><span id="lnameerr" class="error"></span>
                         <input type="text" placeholder="Enter lastname" name="lname" id="lname" onclick="removeError()">
                     </div>
 
                     <div>
-                        <label for="mailid">Enter Email-ID :</label><p id="emailerr" class="error"></p>
-                        <p id="email_wrong" class="error"></p>
-                        <p id="email_exist" class="error"></p>
+                        <label for="mailid">Enter Email-ID :</label><span id="emailerr" class="error"></span>
                         <input type="email" placeholder="Enter email-id " name="mailid" id="mailid" onclick="removeError()">
                     </div>
 
                     <div>
-                        <label for="pwd">Enter Password :</label><p id="pwderr" class="error"></p>
+                        <label for="pwd">Enter Password :</label><span id="pwderr" class="error"></span>
                         <input type="password" title="Password of 1 cap 1 dig and 1 sepcial" placeholder="Enter Password" name = "pwd" id = "pwd" onclick="removeError()">
                     </div>
 
                     <div>
-                        <label for="cpwd">Enter Confirm Password :</label><p id="confirmpwderr" class="error"></p>
+                        <label for="cpwd">Enter Confirm Password :</label><span id="confirmpwderr" class="error"></span>
                         <input type="password" name="cpwd" id="cpwd" placeholder="Enter confirm password" onclick="removeError()">
                     </div>
 
                     <div>
                         <label for="add">Enter Address :</label>
-                        <p id="add_err" class="error"></p>
+                        <span id="add_err" class="error"></span>
                         <input type="text" placeholder="Enter address here" name="add" id="add" onclick="removeError()">
                     </div>
 
@@ -61,7 +59,7 @@
                     <div>
                         <br>
                         <label for="profile-img">Profile Picture :</label>
-                        <p id="imgerr" class="error"></p>
+                        <span id="imgerr" class="error"></span>
                         <input type="file" name=profile-img id="profileimg" onchange="getImageData();" onclick="removeError()">
                         <img style="height: 5%;width: 10%;" id="output" />
                     </div>  
