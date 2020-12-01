@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="javascript/dashboard.js" ></script>
+    <script src="javascript/dashboard.js"></script>
     <script src="javascript/logout.js" ></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
@@ -19,13 +19,16 @@
     
     <section>
       <h2>ToDo List</h2>
-      <div>
+      <div style="padding-bottom: 20px;">
         <input type="text" placeholder="Search by title" id="titleSearch"/>
         <a href="createtodo.html" class="btn" style="float: right;">Create Todo</a>
       </div>
       
+      <div class="error">
+        <p id="startdaterr"></p>
+      </div>
       <div class="status">
-        <b>Status : </b>
+        <b>Status: </b>
         <input type="radio" id="all" name="statusSearch" value="all" checked> All
         <input type="radio" id="comp" name="statusSearch" value="completed"> Completed 
         <input type="radio" id="pend" name="statusSearch" value="pending"> Pending
@@ -36,6 +39,13 @@
         <input type="checkbox" id="office" name="searchByCat" value="office"> Office 
         <input type="checkbox" id="home" name="searchByCat" value="home"> Home 
         <input type="checkbox" id="personal" name="searchByCat" value="personal"> Personal
+      </div>
+
+      <div class="date">
+        <b>Date Range: </b>
+        From:<input type="date" id="startDate" >
+        To:<input type="date" id="endDate" >
+        <input type="button" value="serch" name="searchByDate" id="datefind" onclick="searchByDate()">
       </div>
     
       <div class="todotable">
@@ -56,7 +66,7 @@
     </div>
   </section>
   <footer>
-    <p>All Rights Reserved!!</p>
+    <p style="padding-top:50px;">All Rights Reserved!!</p>
   </footer>
 </body>
 </html>
