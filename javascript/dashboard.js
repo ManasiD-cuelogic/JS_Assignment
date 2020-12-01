@@ -241,6 +241,72 @@ function deletetodos(e){
 }
 };
 
+
+//function for serch by date range
+function searchByDate(){
+    var startDate = document.getElementById("startDate").value;
+    var endDate = document.getElementById("endDate").value;
+      
+    var users = JSON.parse(localStorage.getItem("userlist"));
+    var loggedinuser=JSON.parse(sessionStorage.getItem("loggedinuser"));
+    var todoList=users.find( a => a.email == loggedinuser.email).todos;
+    
+    if(startDate == "" && endDate == ""){
+      document.getElementById("startdaterr").innerHTML = "please select start date and end date";
+      setTimeout(() => {
+        document.getElementById("startdaterr").innerHTML = "";
+      }, 2000);
+    }
+    else if(startDate == ""){
+      document.getElementById("startdaterr").innerHTML = "please select start date";
+      setTimeout(() => {
+        document.getElementById("startdaterr").innerHTML = "";
+      }, 2000);
+    
+    }
+    else if(endDate == ""){
+      document.getElementById("startdaterr").innerHTML = "please select end date";
+      setTimeout(() => {
+        document.getElementById("startdaterr").innerHTML = "";
+      }, 2000);
+     
+    }
+    else if(Date.parse(startDate)>=Date.parse(endDate)){
+      document.getElementById("startdaterr").innerHTML = "Start date should be less then end date";
+      setTimeout(() => {
+        document.getElementById("startdaterr").innerHTML = "";
+      }, 2000);
+     
+    }
+    
+    var rowshtml='';
+    if(todoList && todoList.length>0){
+        for (var i=0;i<todoList.length;i++){
+          if(Date.parse(todoList[i].targetDate)>Date.parse(startDate) && Date.parse(todoList[i].targetDate)<Date.parse(endDate))
+            rowshtml+=`<tr>
+            <td style="text-align:center"><input type="checkbox" data-id="${todoList[i].id}" name="chkdeletetodo" /></td>
+            <td>${(todoList[i].isDone)?"<del>"+todoList[i].title+"</del>":todoList[i].title}</td>
+            <td>${todoList[i].targetDate}</td>
+            <td>${(todoList[i].isDone)?"<text style='color:green;'><b>Completed</b></text>":"<text style='color:red;'><b>Pending</b></text>"}</td>
+            <td>${( Date.parse(todoList[i].reminderDate)< new Date())?"Yes":"No"}</td>
+            <td>${todoList[i].categories.join(',')}</td>
+            <td><button type="button" class="text-success" onclick="markasdone(${todoList[i].id})">Mark as done</button></td>
+            <td><a href="edittodo.html?id=${todoList[i].id}"><i class="fa fa-edit" style="color:#000000;font-size:22px;"></i></a></td>
+            <td style="display:none;">${todoList[i].reminderDate}</td>
+            </tr>`;
+        }
+        
+    }
+    if(rowshtml.length==0){
+      rowshtml=`<tr>
+      <td colspan="7" style="text-align:center"><b>No records to display</b></td>
+      </tr>`;
+    }
+    var tableRef = document.getElementById('todoTbl').getElementsByTagName('tbody')[0];
+    tableRef.innerHTML=rowshtml;
+}
+
+
 //function for mark as done for completed todo
 function markasdone(todoid){
   var users = JSON.parse(localStorage.getItem("userlist"));
@@ -264,5 +330,9 @@ function markasdone(todoid){
   window.location="dashboard.html";
 }
 
+function removeError()
+{
+  document.getElementById("startdaterr").innerText ="";
+}
 
 
