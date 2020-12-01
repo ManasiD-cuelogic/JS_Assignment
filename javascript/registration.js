@@ -56,11 +56,11 @@ function ValidateRegisterForm(){
     }
     else if(!isEmailValid(user.email)){
         isFormValid=false;
-        document.getElementById("email_wrong").innerHTML = "Please enter valid email";
+        document.getElementById("emailerr").innerHTML = "Please enter valid email";
     }
     else if(isEmailExist(user.email)){
         isFormValid=false;
-        document.getElementById("email_exist").innerHTML = "Email Id already registered in the system";
+        document.getElementById("emailerr").innerHTML = "Email Id already registered in the system";
     }
     if(!user.password){
         isFormValid=false;
@@ -90,7 +90,8 @@ function ValidateRegisterForm(){
 };
 
 function isEmailValid(email){
-    var filter = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    //var filter = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var filter = /\S+@\S+\.\S+/;
     return filter.test(email);
 }
 
@@ -127,8 +128,6 @@ function removeError()
   document.getElementById("fnameerr").innerText ="";
   document.getElementById("lnameerr").innerText ="";
   document.getElementById("emailerr").innerText ="";
-  document.getElementById("email_wrong").innerText ="";
-  document.getElementById("email_exist").innerText ="";
   document.getElementById("pwderr").innerText ="";
   document.getElementById("confirmpwderr").innerText ="";
   document.getElementById("imgerr").innerHTML = "";

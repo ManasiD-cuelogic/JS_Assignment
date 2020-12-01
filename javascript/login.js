@@ -28,7 +28,7 @@ function ValidateUserLogin(logindetails){
     //console.log(logindetails.password);
     var isUserExist=false;
     if(logindetails.email=="" && logindetails.password==""){
-        document.getElementById("passmail").innerHTML="Enter Email & Password";
+        document.getElementById("passerr").innerHTML="Enter Email & Password";
         isUserExist=false;
     }
     else if(logindetails.email==""){
@@ -40,7 +40,7 @@ function ValidateUserLogin(logindetails){
         isUserExist=false;
     }
     else if(userList == null){
-        document.getElementById("loginerr").innerHTML="Username/Password Not Matched";
+        document.getElementById("passerr").innerHTML="Username/Password Not Matched";
     }
     else{
         console.log(userList);
@@ -53,7 +53,7 @@ function ValidateUserLogin(logindetails){
     }
     if(!isUserExist)
     {
-        document.getElementById("loginerr").innerHTML="Username/Password Invalid";
+        document.getElementById("passerr").innerHTML="Username/Password Invalid";
 
     }
 }
@@ -75,8 +75,6 @@ function removeError()
 {
   document.getElementById("mailerr").innerText ="";
   document.getElementById("passerr").innerText ="";
-  document.getElementById("passmail").innerText ="";
-  document.getElementById("loginerr").innerText ="";
 }
 function RedirectToToDoListPage(){
     window.location="dashboard.html";
