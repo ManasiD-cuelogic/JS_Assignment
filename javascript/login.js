@@ -40,7 +40,7 @@ function ValidateUserLogin(logindetails){
         isUserExist=false;
     }
     else if(userList == null){
-        document.getElementById("loginerr").innerHTML="Please Register First";
+        document.getElementById("loginerr").innerHTML="Username/Password Not Matched";
     }
     else{
         console.log(userList);
@@ -50,17 +50,6 @@ function ValidateUserLogin(logindetails){
             isUserExist=true;
             break;
         }
-        else if(userList[i].email!==logindetails.email){
-            // document.getElementById("loginerr").innerHTML="Invalid Email";
-            isUserExist=false;
-            
-        }
-        else if(userList[i].password!==logindetails.password){
-            // document.getElementById("loginerr").innerHTML="Password Invalid";
-            isUserExist=false;
-            
-        }
-        
     }
     if(!isUserExist)
     {
